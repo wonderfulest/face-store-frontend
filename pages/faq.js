@@ -35,6 +35,11 @@ const Faq = () => {
             q: "What different between temperature type?",
             a: "Weather Forecast(outdoor): Currently, only Garmin's built-in weather API is supported. If displayed as '--,' it indicates that the current device is not supported. \n" + 
             "Sensor temperature(indoor): Display the measured values of the Garmin device's temperature sensor. If displayed as '--,' it indicates that the current device is not supported.",
+        },
+		{
+            q: "What different between temperature type?",
+            a: "Weather Forecast(outdoor): Currently, only Garmin's built-in weather API is supported. If displayed as '--,' it indicates that the current device is not supported. \n" + 
+            "Sensor temperature(indoor): Display the measured values of the Garmin device's temperature sensor. If displayed as '--,' it indicates that the current device is not supported.",
         }
 		// Add more questions as needed
 	];
