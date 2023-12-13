@@ -5,6 +5,8 @@ import { fetchDataFromApi } from "@/utils/api";
 export default function Home({ products }) {
     return (
         <main>
+            <br />
+            <br />
             <HeroBanner />
             <Wrapper>
                 {/* heading and paragaph start */}
