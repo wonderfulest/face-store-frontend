@@ -6,7 +6,7 @@ const data = [
 	{ id: 1, name: "Home", url: "/" },
 	{ id: 2, name: "Categories", subMenu: true },
 	{ id: 3, name: "FAQ", url: "/faq" },
-	{ id: 4, name: "Contact", url: "/contact" },
+	// { id: 4, name: "Contact", url: "/contact" },
 	// { id: 5, name: "About", url: "/about" },
 ];
 

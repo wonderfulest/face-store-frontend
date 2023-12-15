@@ -19,17 +19,17 @@ const Contact = () => {
 
 	return (
 		<Wrapper class="flex justify-center items-center ">
-			<div class="w-4/5 mx-auto min-h-[600px]">
-				<h1 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center">
+			<div class="container w-4/5 mx-auto min-h-[600px] my-12">
+				<h1 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center py-8">
 					Contact us
 				</h1>
-				<p class="text-[14px] md:text-[18px] mb-5 leading-tight">
+				<p class="text-[14px] md:text-[18px] mb-5 leading-tight py-4">
 					Do you have any questions or comments? Enter your details
 					and we’ll be happy to get back to you.
 				</p>
 				{/* <form action="/submit_form" method="post" class="flex flex-wrap justify-between"> */}
 
-				<div class="flex flex-wrap justify-between">
+				<div class="flex flex-wrap justify-between py-8">
 					<div class="w-full md:w-[48%] mb-5">
 						<label for="username" class="block text-[14px] mb-2">
 							Username:

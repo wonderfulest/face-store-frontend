@@ -4,30 +4,26 @@ import Link from "next/link";
 // import "@/styles/Wrapper.module.css";
 
 const Faq = () => {
-	const faqStyle = {
-		fontWeight: "bold",
-		backgroundColor: "red", // Set background color to red
-		textAlign: "center", // Center align text content
-	};
-
-	const questionStyle = {
-		textDecoration: "underline",
-		fontWeight: "bold",
-	};
-
-	const titleStyle = {
-		textDecoration: "underline",
-		fontWeight: "bold",
-		textAlign: "center", // Center align text content
-	};
-
 	const questions = [
 		{
-			q: "How to install the app?",
+			q: "How do I install and try out the watch face I like?",
 			a:
-				'Select your favorite watch face on the garminface.com website, enter its details page, click the "Download" button. ' +
+				'Select your favorite watch face on the garminface.com website, enter its details page, click the <strong>"Download"</strong> button. ' +
 				"You will be redirected to the Connect IQ Store app page. After clicking download, " +
 				"the watch face will be synchronized to your device through Garmin Express or the CONNECT APP, completing the installation.",
+		},
+		{
+			q: "How do I input the Code to unlock the trial?",
+			a:
+				"Open the link <a href=\"https://kzl.io/code\"><strong><u>https://kzl.io/code</u></strong></a>, enter the six-digit number on the watch face, complete the payment as guided, " +
+				"and the watch face will automatically refresh to a usable state. The refresh time is generally within five minutes (pay attention to the progress bar at the edge of the watch face)." +
+				" If the watch face does not appear for a long time, try synchronizing with the Connect APP or switching networks.",
+		},
+		{
+			q: "I do not want to purchase this app/clockface. How do I stop these messages?",
+			a:
+				"These messages are shown because you are using a paid app or clockface of which the trial has expired." +
+				"If you do not want to pay for the app or clockface, remove the app, or install another clockface from the appstore, and the messages will automatically stop.",
 		},
 		{
 			q: "How to set temperature Celsius or Fahrenheit?",
@@ -49,22 +45,25 @@ const Faq = () => {
 
 	return (
 		<Wrapper>
-			<div>
+			<div class="container my-12">
 				<h1 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center">
 					FAQ
 				</h1>
-				<p class="text-[14px] md:text-[18px] mb-5 leading-tight">
+				<p class="text-xl md:text-xl mb-5 leading-tight">
 					Here are some frequently asked questions:
 				</p>
-
-				<ol className="mx-auto text-center">
+				<ol className="mx-auto text-center text-xl">
 					{questions.map((question, index) => (
 						<li key={index}>
 							<Link
 								href={`#question${index + 1}`}
 								className="underline"
 							>
-								{question.q}
+								<span
+									dangerouslySetInnerHTML={{
+										__html: question.q,
+									}}
+								/>
 							</Link>
 						</li>
 					))}
@@ -78,7 +77,12 @@ const Faq = () => {
 						<h2 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight ">
 							Q: {question.q}
 						</h2>
-						<p>A: {question.a}</p>
+						<p class="my-8 text-xl ">
+							A:{" "}
+							<span
+								dangerouslySetInnerHTML={{ __html: question.a }}
+							/>{" "}
+						</p>
 					</section>
 				))}
 
