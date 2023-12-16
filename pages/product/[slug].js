@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { IoMdHeartEmpty, IoIosDownload } from "react-icons/io";
+import { IoMdHeartEmpty, IoIosDownload, IoIosUnlock } from "react-icons/io";
 import Wrapper from "@/components/Wrapper";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
@@ -109,7 +109,7 @@ const ProductDetails = ({ product, products }) => {
 
 						{/* DOWNLOAD BUTTON START */}
 						<button
-							className="w-full py-4 rounded-full border bg-black text-white text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
+							className="w-full py-4 rounded-full border-4 border-black bg-black text-white text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
 								window.open(p.garmin_appstore_url, "_blank");
 								// window.location.href = p.garmin_appstore_url;
@@ -120,6 +120,22 @@ const ProductDetails = ({ product, products }) => {
 							<IoIosDownload size={20} />
 						</button>
 						{/* DOWNLOAD BUTTON END */}
+
+
+						{/* Input the Code START */}
+						<button
+							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
+							onClick={() => {
+								window.open("https://kzl.io/code", "_blank");
+								// window.location.href = p.garmin_appstore_url;
+								// notify();
+							}}
+						>
+							Unlock Trial
+							<IoIosUnlock size={20} />
+						</button>
+						{/* DOWNLOAD BUTTON END */}
+						
 
 						<div>
 							<div className="text-lg font-bold mb-5">
