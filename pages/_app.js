@@ -4,9 +4,11 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import { Provider } from "react-redux";
 import store from "@/store/store";
+
 
 export default function App({ Component, pageProps }) {
     return (
@@ -37,7 +39,8 @@ export default function App({ Component, pageProps }) {
                 <Header />
                 <Component {...pageProps} />
                 <Footer />
-                <Analytics />
+                <Analytics /> {/* This will automatically track page views */}
+                <SpeedInsights /> {/* This will automatically track LCP */}
             </Provider>
         </>
     );
