@@ -8,7 +8,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Home({ populates, series, productsNew }) {
-
 	const settings = {
 		dots: false,
 		infinite: true,
@@ -21,7 +20,7 @@ export default function Home({ populates, series, productsNew }) {
 			{
 				breakpoint: 1200,
 				settings: {
-					slidesToShow: 2,
+					slidesToShow: 3,
 					slidesToScroll: 2,
 				},
 			},
@@ -36,12 +35,13 @@ export default function Home({ populates, series, productsNew }) {
 	};
 	return (
 		<main>
-			<br />
-			<br />
-			<HeroBanner />
+			<div class="mt-24">
+				<HeroBanner />
+			</div>
+
 			<Wrapper>
 				{/* heading and paragaph start */}
-				<div className="text-center max-w-[800px] mx-auto my-[50px] md:my-[80px]">
+				<div className="text-center max-w-[800px] mx-auto my-[50px] mb-[25px] md:my-[80px]">
 					<div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
 						Unique, Stylish Wristwear！
 					</div>
