@@ -4,6 +4,7 @@ import Head from "next/head";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
+import { Analytics } from '@vercel/analytics/react';
 import { Provider } from "react-redux";
 import store from "@/store/store";
 
@@ -36,6 +37,7 @@ export default function App({ Component, pageProps }) {
                 <Header />
                 <Component {...pageProps} />
                 <Footer />
+                <Analytics />
             </Provider>
         </>
     );
