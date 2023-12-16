@@ -5,7 +5,7 @@ import Wrapper from "@/components/Wrapper";
 import CartItem from "@/components/CartItem";
 import { useSelector } from "react-redux";
 
-import { makePaymentRequest } from "@/utils/api";
+import { makePostRequest } from "@/utils/api";
 import { loadStripe } from "@stripe/stripe-js";
 const stripePromise = loadStripe(
     process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
@@ -26,7 +26,7 @@ const Cart = () => {
         try {
             setLoading(true);
             const stripe = await stripePromise;
-            const res = await makePaymentRequest("/api/orders", {
+            const res = await makePostRequest("/api/orders", {
                 products: cartItems,
             });
             await stripe.redirectToCheckout({

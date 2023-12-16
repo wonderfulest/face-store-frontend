@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import Wrapper from "@/components/Wrapper";
-import { makePaymentRequest } from "@/utils/api";
+import { makePostRequest } from "@/utils/api";
 
 const Contact = () => {
 	const [loading, setLoading] = useState(false);
 	const handleContact = async () => {
 		try {
 			setLoading(true);
-			const res = await makePaymentRequest("/api/contacts", {
+			const res = await makePostRequest("/api/contacts", {
 				products: cartItems,
 			});
 			console.log("contact res:", res);
