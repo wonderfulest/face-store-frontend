@@ -45,11 +45,11 @@ const Faq = () => {
 
 	return (
 		<Wrapper>
-			<div class="container my-12">
-				<h1 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center">
+			<div className="container my-12">
+				<h1 className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center">
 					FAQ
 				</h1>
-				<p class="text-xl md:text-xl mb-5 leading-tight">
+				<p className="text-xl md:text-xl mb-5 leading-tight">
 					Here are some frequently asked questions:
 				</p>
 				<ol className="mx-auto text-center text-xl">
@@ -74,10 +74,10 @@ const Faq = () => {
 
 				{questions.map((question, index) => (
 					<section id="question1">
-						<h2 class="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight ">
+						<h2 className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight ">
 							Q: {question.q}
 						</h2>
-						<p class="my-8 text-xl ">
+						<p className="my-8 text-xl ">
 							A:{" "}
 							<span
 								dangerouslySetInnerHTML={{ __html: question.a }}
