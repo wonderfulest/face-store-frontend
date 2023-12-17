@@ -92,7 +92,7 @@ export default function Home({ populates, series, productsNew }) {
 
 export async function getStaticProps() {
 	const productsNew = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21"
+		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort=updatedAt:desc"
 	);
 	const series = {
 		data: [
@@ -162,7 +162,7 @@ export async function getStaticProps() {
 		],
 	};
 	const populates = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21"
+		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort=download:desc"
 	);
 
 	return {
