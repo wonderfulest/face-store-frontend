@@ -162,7 +162,7 @@ export async function getStaticProps() {
 		],
 	};
 	const populates = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort=download:desc"
+		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc"
 	);
 
 	return {
