@@ -158,23 +158,13 @@ const ProductDetails = ({ product, products }) => {
 export default ProductDetails;
 
 export async function getStaticPaths() {
-	// 获取全部产品的slug, 需要优化，直接获取 slug, 而不是遍历产品列表
-	const products = await fetchDataFromApi("/api/products?populate=*&pagination[page]=1&pagination[pageSize]=100");
-	const paths = products?.data?.map((p) => ({
+	// 获取全部产品的slug
+	const products = await fetchDataFromApi("/api/products/slugs");
+	const paths = products?.map((p) => ({
 		params: {
-			slug: p.attributes.slug,
+			slug: p.slug,
 		},
 	}));
-	if (products.meta.pagination.page < products.meta.pagination.pageCount) {
-		const paths2 = await fetchDataFromApi(`/api/products?populate=*&pagination[page]=${products.meta.pagination.page + 1}&pagination[pageSize]=100`);
-		paths2?.data?.map((p) => {
-			paths.push({
-				params: {
-					slug: p.attributes.slug,
-				},
-			});
-		});
-	}
 	return {
 		paths,
 		fallback: false,
