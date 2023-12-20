@@ -120,14 +120,14 @@ export async function getStaticProps() {
 					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702652213/app_images_2_F73_E3_CAED_1802_1_C33_F012_D662_D521_A451_2_F1699190724039_8359ea8ca2.png",
 				},
 			},
-			{
-				id: 4,
-				attributes: {
-					name: "Analog",
-					slug: "analog",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702643500/app_images_2_F451_C34_CB_0355_FA_95_0_A5_E_7_E70_ED_39_F322_2_F1697785985942_6679dbbaa8.png",
-				},
-			},
+			// {
+			// 	id: 4,
+			// 	attributes: {
+			// 		name: "Analog",
+			// 		slug: "analog",
+			// 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702643500/app_images_2_F451_C34_CB_0355_FA_95_0_A5_E_7_E70_ED_39_F322_2_F1697785985942_6679dbbaa8.png",
+			// 	},
+			// },
 			{
 				id: 5,
 				attributes: {
@@ -159,10 +159,18 @@ export async function getStaticProps() {
 					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
 				},
 			},
+			{
+				id: 9,
+				attributes: {
+					name: "Christmas",
+					slug: "christmas",
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702653226/app_images_2_FA_2863698_D275_139_E_869_A_513_BAF_44_B8_E4_2_F1702474905871_12057cabce.png"
+				}
+			}
 		],
 	};
 	const populates = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc"
+		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc"
 	);
 
 	return {
