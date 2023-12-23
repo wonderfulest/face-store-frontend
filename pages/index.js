@@ -55,7 +55,7 @@ export default function Home({ populates, series, productsNew }) {
 				</div>
 				{/* heading and paragaph end */}
 
-				{/*  New Slider start */}
+				{/* New Slider start */}
 				<div className="text-5xl mt-24 mb-12">New</div>
 				<div className="px-5 md:px-0">
 					<Slider {...settings}>
@@ -66,7 +66,7 @@ export default function Home({ populates, series, productsNew }) {
 						))}
 					</Slider>
 				</div>
-				{/*  New Slider end */}
+				{/* New Slider end */}
 
 				{/* Series grid start */}
 				<div className="text-5xl mt-24 mb-12">Series</div>
