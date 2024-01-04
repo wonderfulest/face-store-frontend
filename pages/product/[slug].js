@@ -173,10 +173,10 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
 	const product = await fetchDataFromApi(
-		`/api/products?populate=*&filters[slug][$eq]=${slug}`
+		`/api/products?populate=*&filters[slug][$eq]=${slug}&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc`
 	);
 	const products = await fetchDataFromApi(
-		`/api/products?populate=*&[filters][slug][$ne]=${slug}`
+		`/api/products?populate=*&[filters][slug][$ne]=${slug}&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc`
 	);
 	return {
 		props: {
