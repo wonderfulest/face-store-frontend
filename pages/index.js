@@ -105,6 +105,14 @@ export async function getStaticProps() {
 				},
 			},
 			{
+				id: 8,
+				attributes: {
+					name: "Venu",
+					slug: "venu",
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
+				},
+			},
+			{
 				id: 2,
 				attributes: {
 					name: "Animal",
@@ -136,13 +144,13 @@ export async function getStaticProps() {
 					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702689512/app_images_2_F587005_F0_7_AF_7_523_B_EB_16_3512188_B8118_2_F1697781243526_5692ed7ccf.png"
 				},
 			},
-			{
-				id: 6,
-				attributes: {
-					name: "Mandala",
-					slug: "mandala",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629745/app_images_2_FE_8_FAF_511_DDBB_15_F8_20_FD_5_C7317_F82045_2_F1699240931600_990f19f83c.png"				},
-			},
+			// {
+			// 	id: 6,
+			// 	attributes: {
+			// 		name: "Mandala",
+			// 		slug: "mandala",
+			// 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629745/app_images_2_FE_8_FAF_511_DDBB_15_F8_20_FD_5_C7317_F82045_2_F1699240931600_990f19f83c.png"				},
+			// },
 			{
 				id: 7,
 				attributes: {
@@ -151,20 +159,28 @@ export async function getStaticProps() {
 					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702613163/app_images_2_F5_B63_D7_B6_0_DC_2_7966_418_B_6_EA_497630071_2_F1699891467338_72aa534c4d.png",
 				},
 			},
+			// {
+			// 	id: 9,
+			// 	attributes: {
+			// 		name: "Christmas",
+			// 		slug: "christmas",
+			// 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702653226/app_images_2_FA_2863698_D275_139_E_869_A_513_BAF_44_B8_E4_2_F1702474905871_12057cabce.png"
+			// 	}
+			// },
 			{
-				id: 8,
+				id: 10,
 				attributes: {
-					name: "Venu",
-					slug: "venu",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
-				},
+					name: "Landscape",
+					slug: "landscape",
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png"
+				}
 			},
 			{
-				id: 9,
+				id: 13,
 				attributes: {
-					name: "Christmas",
-					slug: "christmas",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702653226/app_images_2_FA_2863698_D275_139_E_869_A_513_BAF_44_B8_E4_2_F1702474905871_12057cabce.png"
+					name: "Fantasy",
+					slug: "fantasy",
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png"
 				}
 			}
 		],
