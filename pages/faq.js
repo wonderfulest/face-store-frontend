@@ -15,7 +15,7 @@ const Faq = () => {
 		{
 			q: "How do I input the Code to unlock the trial?",
 			a:
-				"Open the link <a href=\"https://kzl.io/code\"><strong><u>https://kzl.io/code</u></strong></a>, enter the six-digit number on the watch face, complete the payment as guided, " +
+				'Open the link <a href="https://kzl.io/code"><strong><u>https://kzl.io/code</u></strong></a>, enter the six-digit number on the watch face, complete the payment as guided, ' +
 				"and the watch face will automatically refresh to a usable state. The refresh time is generally within five minutes (pay attention to the progress bar at the edge of the watch face)." +
 				" If the watch face does not appear for a long time, try synchronizing with the Connect APP or switching networks.",
 		},
@@ -24,6 +24,13 @@ const Faq = () => {
 			a:
 				"These messages are shown because you are using a paid app or clockface of which the trial has expired." +
 				"If you do not want to pay for the app or clockface, remove the app, or install another clockface from the appstore, and the messages will automatically stop.",
+		},
+		{
+			q: "When will the metric data display units?",
+			a:
+				'The metric data will display units when the "ShowUnit" setting is enabled, and the combined length of the data item and its unit is less than or equal to "MaxFieldLength". ' +
+				"<br>" +
+				"If these conditions are met, the unit will be shown; otherwise, only the numeric value will be displayed. Make sure to correctly configure the parameters to ensure the desired unit display.",
 		},
 		{
 			q: "How to set temperature Celsius or Fahrenheit?",
