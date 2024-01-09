@@ -26,9 +26,15 @@ const Faq = () => {
 				"If you do not want to pay for the app or clockface, remove the app, or install another clockface from the appstore, and the messages will automatically stop.",
 		},
 		{
+
+			q: "Is it possible to change text size?",
+			a:
+				"Certainly! You just need to select the desired font size in the settings, and you can choose from small, medium, or large."
+		},
+		{
 			q: "When will the metric data display units?",
 			a:
-				'The metric data will display units when the "ShowUnit" setting is enabled, and the combined length of the data item and its unit is less than or equal to "MaxFieldLength". ' +
+				'The metric data will display units when the "ShowUnit" setting is enabled, and the combined length of the data item and it\'s unit is less than or equal to "MaxFieldLength". ' +
 				"<br>" +
 				"If these conditions are met, the unit will be shown; otherwise, only the numeric value will be displayed. Make sure to correctly configure the parameters to ensure the desired unit display.",
 		},
@@ -46,6 +52,11 @@ const Faq = () => {
 				"Weather Forecast(outdoor): Currently, only Garmin's built-in weather API is supported. If displayed as '--,' it indicates that the current device is not supported. \n" +
 				"Sensor temperature(indoor): Display the measured values of the Garmin device's temperature sensor. If displayed as '--,' it indicates that the current device is not supported.",
 		},
+
+		// {
+		// 	q: "是否增加秒针?",
+		// 	a: ""
+		// },
 
 		// Add more questions as needed
 	];
