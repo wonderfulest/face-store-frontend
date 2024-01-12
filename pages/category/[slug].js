@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Wrapper from "@/components/Wrapper";
 import ProductCard from "@/components/ProductCard";
 import { fetchDataFromApi } from "@/utils/api";
+import { shuffleArray } from "@/utils/helper";
 import useSWR from "swr";
 import { useRouter } from "next/router";
 const maxResult = 99;

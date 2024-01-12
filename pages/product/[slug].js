@@ -4,7 +4,7 @@ import Wrapper from "@/components/Wrapper";
 import ProductDetailsCarousel from "@/components/ProductDetailsCarousel";
 import RelatedProducts from "@/components/RelatedProducts";
 import { fetchDataFromApi } from "@/utils/api";
-import { getDiscountedPricePercentage } from "@/utils/helper";
+import { getDiscountedPricePercentage, shuffleArray } from "@/utils/helper";
 import ReactMarkdown from "react-markdown";
 import { useSelector, useDispatch } from "react-redux";
 import { addToCart } from "@/store/cartSlice";
@@ -76,7 +76,7 @@ const ProductDetails = ({ product, products }) => {
 						</div>
 
 						<div className="text-md font-medium text-black/[0.5]">
-                            excl. of taxes
+							excl. of taxes
 						</div>
 						<div className="text-md font-medium text-black/[0.5] mb-20">
 							{/* {`(Also includes all applicable duties)`} */}
@@ -121,7 +121,6 @@ const ProductDetails = ({ product, products }) => {
 						</button>
 						{/* DOWNLOAD BUTTON END */}
 
-
 						{/* Input the Code START */}
 						<button
 							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
@@ -135,7 +134,6 @@ const ProductDetails = ({ product, products }) => {
 							<IoIosUnlock size={20} />
 						</button>
 						{/* DOWNLOAD BUTTON END */}
-						
 
 						<div>
 							<div className="text-lg font-bold mb-5">

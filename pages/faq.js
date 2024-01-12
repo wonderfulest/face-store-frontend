@@ -58,6 +58,11 @@ const Faq = () => {
 		// 	a: ""
 		// },
 
+		// {
+		// 	q: "change miles to kilometers?",
+		// 	a: ""
+		// },
+
 		// Add more questions as needed
 	];
 

@@ -4,6 +4,7 @@ import ProductCard from "@/components/ProductCard";
 import SeriesCard from "@/components/SeriesCard";
 import Wrapper from "@/components/Wrapper";
 import { fetchDataFromApi } from "@/utils/api";
+import { shuffleArray } from "@/utils/helper";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -141,7 +142,7 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Skull",
 					slug: "skull",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702689512/app_images_2_F587005_F0_7_AF_7_523_B_EB_16_3512188_B8118_2_F1697781243526_5692ed7ccf.png"
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702689512/app_images_2_F587005_F0_7_AF_7_523_B_EB_16_3512188_B8118_2_F1697781243526_5692ed7ccf.png",
 				},
 			},
 			// {
@@ -172,24 +173,28 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Landscape",
 					slug: "landscape",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png"
-				}
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png",
+				},
 			},
 			{
 				id: 13,
 				attributes: {
 					name: "Fantasy",
 					slug: "fantasy",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png"
-				}
-			}
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
+				},
+			},
 		],
 	};
 	const populates = await fetchDataFromApi(
 		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc"
 	);
-
+	shuffleArray(populates.data);
 	return {
-		props: { productsNew, series, populates },
+		props: {
+			productsNew,
+			series,
+			populates,
+		},
 	};
 }
