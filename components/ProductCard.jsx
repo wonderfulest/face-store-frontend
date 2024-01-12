@@ -6,6 +6,7 @@ import React from "react";
 const ProductCard = ({ data: { attributes: p, id } }) => {
   const displayPrice = p.price === 0 ? "Free" : `$${p.price}`;
   const priceTextColor = p.price === 0 ? "text-green-500" : ""; // Choose the color you want for free
+  const discountColor = p.price < p.original_price ? "text-green-500" : "";
 
   return (
     <Link
@@ -30,7 +31,7 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
               <p className="text-base font-medium line-through">
                 ${p.original_price}
               </p>
-              <p className={`ml-auto text-base font-medium ${priceTextColor}`}>
+              <p className={`ml-auto text-base font-medium ${discountColor}`}>
                 {getDiscountedPricePercentage(p.original_price, p.price)}% off
               </p>
             </>
