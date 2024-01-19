@@ -11,6 +11,7 @@ export const getDiscountedPricePercentage = (
 
 
 export function shuffleArray (copied) {
+  console.log("copied", copied)
 	for (let i = copied.length - 1; i > 0; i--) {
 	  const j = Math.floor(Math.random() * (i + 1));
 	  [copied[i], copied[j]] = [copied[j], copied[i]];
