@@ -43,3 +43,4 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
 };
 
 export default ProductCard;
+
