@@ -7,8 +7,8 @@ export const fetchDataFromApi = async (endpoint) => {
             Authorization: "Bearer " + STRAPI_API_TOKEN,
         },
     };
-    // console.log("[GET] data from api");
-    // console.log(`${API_URL}${endpoint}`, options);
+    console.log("[GET] data from api");
+    console.log(`${API_URL}${endpoint}`, options);
 
     const res = await fetch(`${API_URL}${endpoint}`, options);
     const data = await res.json();
@@ -18,8 +18,8 @@ export const fetchDataFromApi = async (endpoint) => {
 
 export const makePostRequest = async (endpoint, payload) => {
     
-    // console.log("[POST] makePostRequest data from api");
-    // console.log(`${API_URL}${endpoint}`, options);
+    console.log("[POST] makePostRequest data from api");
+    console.log(`${API_URL}${endpoint}`, options);
 
     const res = await fetch(`${API_URL}${endpoint}`, {
         method: "POST",
