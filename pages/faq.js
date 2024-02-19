@@ -5,6 +5,7 @@ import Link from "next/link";
 
 const Faq = () => {
 	const questions = [
+		// Pro Plan & Purchase
 		{
 			q: "How do I install and try out the watch face I like?",
 			a:
@@ -25,11 +26,42 @@ const Faq = () => {
 				"These messages are shown because you are using a paid app or clockface of which the trial has expired." +
 				"If you do not want to pay for the app or clockface, remove the app, or install another clockface from the appstore, and the messages will automatically stop.",
 		},
+		// Theme Settings
 		{
-
 			q: "Is it possible to change text size?",
 			a:
-				"Certainly! You just need to select the desired font size in the settings, and you can choose from small, medium, or large."
+				"Certainly! You just need to select the desired font size in the settings, and you can choose from normal, or large."
+		},
+		{
+			q: "What is the purpose of the Mirror feature?",
+			a:
+				"Originally designed for left-handed users, sometimes it also produces very interesting effects."
+		},
+		// {
+		// 	q: "AOD mode?",
+		// 	a:
+		// 		"Certainly! You just need to select the desired font size in the settings, and you can choose from normal, or large."
+		// },
+		// Time Settings
+		
+		// Date Settings
+		{
+			q: "How to change the date format?",
+			a:
+				"You can choose your preferred display style based on the hints in the Date Format settings; for example, if you want to display 'Mon, Feb 19', you need to fill in the input box according to the hint with '%w, %m %d'; similarly, if you fill in '%y/%m/%d', the date area will display a string in the format '2024/02/19'."
+		},
+		// {
+		// 	q: "How to change the week start day ?",
+		// 	a:
+		// 		"Select the desired week start day in the settings, and you can choose from Sunday, Monday, or Saturday. 默认为系统设置"
+		// },
+		// 
+
+		// Field Settings
+		{
+			q: "How to modify the icon color settings",
+			a:
+				'I recommend selecting the Default setting, where we will use default colors based on different data fields, and some icons may also have a flashing effect. Of course, if you want to customize the colors of the icons, you can also make your selection.'
 		},
 		{
 			q: "When will the metric data display units?",
@@ -52,6 +84,29 @@ const Faq = () => {
 				"Weather Forecast(outdoor): Currently, only Garmin's built-in weather API is supported. If displayed as '--,' it indicates that the current device is not supported. \n" +
 				"Sensor temperature(indoor): Display the measured values of the Garmin device's temperature sensor. If displayed as '--,' it indicates that the current device is not supported.",
 		},
+		// Indicator Settings
+		// {
+		// 	q: "What is the purpose of the Indicator?",
+		// 	a:
+		// 		"The indicator is a visual reminder of the time you have been inactive. It will fill up as you remain inactive, and will disappear once you start moving."
+		// },
+		// {
+		// 	q: "How to set the Indicator?",
+		// 	a:
+		// 		"Select the desired Indicator setting in the settings, and you can choose from Auto, Always, or Off."
+		// },
+
+		// Movebar Settings
+		// {
+		// 	q: "What is the purpose of the Movebar?",
+		// 	a:
+		// 		"The Movebar is a visual reminder of the time you have been inactive. It will fill up as you remain inactive, and will disappear once you start moving."
+		// },
+		// {
+		// 	q: "How to set the Movebar?",
+		// 	a:
+		// 		"Select the desired Movebar setting in the settings, and you can choose from Auto, Always, or Off."
+		// },
 
 		// {
 		// 	q: "是否增加秒针?",
@@ -110,6 +165,8 @@ const Faq = () => {
 				))}
 
 				{/* Add more sections for additional questions and answers */}
+
+
 			</div>
 		</Wrapper>
 	);
