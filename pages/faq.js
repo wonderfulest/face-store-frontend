@@ -40,7 +40,9 @@ const Faq = () => {
 		// {
 		// 	q: "AOD mode?",
 		// 	a:
-		// 		"Certainly! You just need to select the desired font size in the settings, and you can choose from normal, or large."
+		// 		"<string id="AllStatsAndTime">* All stats and time, but dimmed (only available for Pro license)</string>
+		// 		<string id="OnlyTime">Only time, but bright</string>
+		// 		<string id="None">None</string>"
 		// },
 		// Time Settings
 		
