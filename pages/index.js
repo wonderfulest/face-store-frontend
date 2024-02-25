@@ -102,7 +102,10 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Whole",
 					slug: "whole",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702476774/app_images_2_FC_8_A9_EEEB_4_EFA_D302_3_F9_A_9_E85238_CB_5_D3_2_F1702039498660_2655b3db59.png",
+					url: 	
+					// Golden Textures
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740595/app_images_2_F601_D41_EE_A469_436_F_363_F_27212_AD_0213_C_2_F1708349200978_16588b0a11.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702476774/app_images_2_FC_8_A9_EEEB_4_EFA_D302_3_F9_A_9_E85238_CB_5_D3_2_F1702039498660_2655b3db59.png",
 				},
 			},
 			{
@@ -110,7 +113,10 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Venu",
 					slug: "venu",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
+					url: 
+					// Dark Sparkles
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1706322003/app_images_2_F3723489_E_0201_702_B_1_CAA_976_CA_93_A47_E9_2_F1706274670543_c6bd65f631.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
 				},
 			},
 			{
@@ -118,7 +124,9 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Animal",
 					slug: "animal",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629573/app_images_2_F6_A11_E6_B9_2_E45_3_E27_E167_EE_1_F1_E31592_B_2_F1700486288602_1e00257076.png",
+					url: // Majestic Elephants
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1704332909/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249474628_9b4e32317c.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629573/app_images_2_F6_A11_E6_B9_2_E45_3_E27_E167_EE_1_F1_E31592_B_2_F1700486288602_1e00257076.png",
 				},
 			},
 			{
@@ -126,25 +134,28 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Flower",
 					slug: "flower",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702652213/app_images_2_F73_E3_CAED_1802_1_C33_F012_D662_D521_A451_2_F1699190724039_8359ea8ca2.png",
+					url: // Pink Sakuri
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1704333410/app_images_2_F42_DE_00_F8_E314_95_FD_ECE_6_C1_E95_A6_C8337_2_F1703249865073_9acdd5422c.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702652213/app_images_2_F73_E3_CAED_1802_1_C33_F012_D662_D521_A451_2_F1699190724039_8359ea8ca2.png",
+				},
+			},
+			{
+				id: 4,
+				attributes: {
+					name: "Analog",
+					slug: "analog",
+					url:  // Classical Analog Pro
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1705068295/app_images_2_F2_C7_A67_C6_0_E69_C41_D_5_F8_E_C7_C99023_F374_2_F1704982446251_a1ba4d236b.png"
 				},
 			},
 			// {
-			// 	id: 4,
+			// 	id: 5,
 			// 	attributes: {
-			// 		name: "Analog",
-			// 		slug: "analog",
-			// 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702643500/app_images_2_F451_C34_CB_0355_FA_95_0_A5_E_7_E70_ED_39_F322_2_F1697785985942_6679dbbaa8.png",
+			// 		name: "Skull",
+			// 		slug: "skull",
+			// 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702689512/app_images_2_F587005_F0_7_AF_7_523_B_EB_16_3512188_B8118_2_F1697781243526_5692ed7ccf.png",
 			// 	},
 			// },
-			{
-				id: 5,
-				attributes: {
-					name: "Skull",
-					slug: "skull",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702689512/app_images_2_F587005_F0_7_AF_7_523_B_EB_16_3512188_B8118_2_F1697781243526_5692ed7ccf.png",
-				},
-			},
 			// {
 			// 	id: 6,
 			// 	attributes: {
@@ -157,7 +168,7 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Digital",
 					slug: "digital",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702613163/app_images_2_F5_B63_D7_B6_0_DC_2_7966_418_B_6_EA_497630071_2_F1699891467338_72aa534c4d.png",
+					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708854094/cover_image_23f5100a78.gif"
 				},
 			},
 			// {
@@ -173,7 +184,9 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Landscape",
 					slug: "landscape",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png",
+					url: // Dwarf Pine
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740369/app_images_2_FA_3869262_D98_E_D5_B4_2178_DFEE_20_BD_4440_2_F1707916860499_ef0ce7331b.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png",
 				},
 			},
 			{
@@ -181,7 +194,9 @@ export async function getStaticProps() {
 				attributes: {
 					name: "Fantasy",
 					slug: "fantasy",
-					url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
+					url: // Stellar Dawn
+					"https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png"
+					// "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
 				},
 			},
 		],
