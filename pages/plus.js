@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import Wrapper from "@/components/Wrapper";
-import Link from "next/link";
 
 const Plus = () => {
 	const [isYearly, setIsYearly] = useState(false);
