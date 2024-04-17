@@ -201,7 +201,7 @@ export async function getStaticProps() {
 		],
 	};
 	const populates = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc"
+		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc"
 	);
 	shuffleArray(populates.data);
 	return {

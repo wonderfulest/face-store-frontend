@@ -171,14 +171,14 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }) {
 	const product = await fetchDataFromApi(
-		`/api/products?populate=*&filters[slug][$eq]=${slug}&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc`
+		`/api/products?populate=*&filters[slug][$eq]=${slug}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
 	);
 	const categories = [
 		"analog","animal","cartoon","christmas","cross-stitch","cyberpunk","digital","fantasy","fenix","flower","landscape","mandala","minimalist","neon","skull","stylish","venu","whole","world"
 	];
 	var randomCategory = categories[Math.floor(Math.random() * categories.length)];
 	const products = await fetchDataFromApi(
-		`/api/products?populate=*&[filters][slug][$ne]=${slug}&[filters][categories][slug][$eq]=${randomCategory}&sort[0]=purchases:desc&sort[1]=bundle_triggers:desc`
+		`/api/products?populate=*&[filters][slug][$ne]=${slug}&[filters][categories][slug][$eq]=${randomCategory}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
 	);
 	return {
 		props: {
