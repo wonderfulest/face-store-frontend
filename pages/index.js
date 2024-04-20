@@ -200,8 +200,10 @@ export async function getStaticProps() {
 			},
 		],
 	};
+ 	const last100days = new Date(Date.now() - 80 * 24 * 60 * 60 * 1000).toISOString();
+	const last10days = new Date(Date.now() - 10 * 24 * 60 * 60 * 1000).toISOString();
 	const populates = await fetchDataFromApi(
-		"/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc"
+		`/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc&filters[createdAt][$gt]=${last100days}&filters[createdAt][$lt]=${last10days}`
 	);
 	shuffleArray(populates.data);
 	return {
