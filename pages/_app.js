@@ -1,3 +1,5 @@
+import { useEffect } from 'react';
+import { useRouter } from 'next/router';
 import "@/styles/globals.css";
 import Head from "next/head";
 
@@ -6,11 +8,34 @@ import Footer from "@/components/Footer";
 
 import { Provider } from "react-redux";
 import store from "@/store/store";
-import { Analytics } from '@vercel/analytics/react';
+// import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import ReactGA from 'react-ga';
 
+const TRACKING_ID = "G-55XQR96D6L"; // 用您的Google Analytics跟踪ID替换
 
 export default function App({ Component, pageProps }) {
+
+    const router = useRouter();
+
+    useEffect(() => {
+        ReactGA.initialize(TRACKING_ID);
+        const handleRouteChange = (url) => {
+            ReactGA.pageview(url);
+        };
+        // 跟踪初始页面加载
+        handleRouteChange(window.location.pathname);
+
+        // 跟踪后续的路由更改
+        router.events.on('routeChangeComplete', handleRouteChange);
+
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange);
+        };
+    }, [router.events]);
+
+
+
     return (
         <>
             <Head>
@@ -39,8 +64,8 @@ export default function App({ Component, pageProps }) {
                 <Header />
                 <Component {...pageProps} />
                 <Footer />
-                <Analytics /> {/* This will automatically track page views */}
-                <SpeedInsights /> {/* This will automatically track LCP */}
+                {/* <Analytics /> This will automatically track page views */}
+                <SpeedInsights /> {/*This will automatically track LCP */}
             </Provider>
         </>
     );

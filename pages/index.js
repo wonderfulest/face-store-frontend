@@ -14,12 +14,10 @@ export default function Home({ populates, series, productsNew }) {
   const [filteredProducts, setFilteredProducts] = useState({});
 
   const onSearch = async (searchTerm) => {
-    console.log("searchTerm:" + searchTerm);
-
     if (searchTerm && searchTerm.length > 0) {
       searchTerm = searchTerm.toLowerCase();
       const results = await fetchDataFromApi(
-        `/api/products?populate=*&filters[slug][$contains]=${searchTerm}&pagination[page]=1&pagination[pageSize]=60`
+        `/api/products?populate=*&filters[slug][$contains]=${searchTerm}&sort[0]=download:desc&pagination[page]=1&pagination[pageSize]=60`
       );
       setFilteredProducts(results);
     } else {
