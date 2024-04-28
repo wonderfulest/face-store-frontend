@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 import { Provider } from "react-redux";
 import store from "@/store/store";
-// import { Analytics } from '@vercel/analytics/react';
+import { Analytics } from '@vercel/analytics/react'; // Import the Vercel Analytics component
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import ReactGA from 'react-ga';
 
@@ -33,8 +33,6 @@ export default function App({ Component, pageProps }) {
             router.events.off('routeChangeComplete', handleRouteChange);
         };
     }, [router.events]);
-
-
 
     return (
         <>
@@ -64,7 +62,7 @@ export default function App({ Component, pageProps }) {
                 <Header />
                 <Component {...pageProps} />
                 <Footer />
-                {/* <Analytics /> This will automatically track page views */}
+                <Analytics />  {/*Vercel Analytics : This will automatically track page views*/}
                 <SpeedInsights /> {/*This will automatically track LCP */}
             </Provider>
         </>

@@ -230,7 +230,7 @@ export async function getStaticProps() {
     Date.now() - 120 * 24 * 60 * 60 * 1000
   ).toISOString();
   const last10days = new Date(
-    Date.now() - 0 * 24 * 60 * 60 * 1000
+    Date.now() - 7 * 24 * 60 * 60 * 1000
   ).toISOString();
   const populates = await fetchDataFromApi(
     `/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc&filters[createdAt][$gt]=${last100days}&filters[createdAt][$lt]=${last10days}`
