@@ -227,7 +227,7 @@ export async function getStaticProps() {
     ],
   };
   const last100days = new Date(
-    Date.now() - 120 * 24 * 60 * 60 * 1000
+    Date.now() - 50 * 24 * 60 * 60 * 1000
   ).toISOString();
   const last10days = new Date(
     Date.now() - 7 * 24 * 60 * 60 * 1000
