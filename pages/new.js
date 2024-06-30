@@ -70,7 +70,7 @@ export default function Home({ productsNew }) {
 
 export async function getStaticProps() {
   const productsNew = await fetchDataFromApi(
-    "/api/products?populate=*&pagination[page]=1&pagination[pageSize]=99&sort=updatedAt:desc"
+    "/api/products?populate=*&[filters][download][$gt]=36&pagination[page]=1&pagination[pageSize]=60&sort=updatedAt:desc"
   );
 
 //   shuffleArray(productsNew.data);
