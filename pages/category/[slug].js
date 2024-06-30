@@ -5,7 +5,7 @@ import { fetchDataFromApi } from "@/utils/api";
 import { shuffleArray } from "@/utils/helper";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-const maxResult = 99;
+const maxResult = 27;
 
 const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
@@ -16,7 +16,7 @@ const Category = ({ category, products, slug }) => {
     }, [query]);
 
     const { data, error, isLoading } = useSWR(
-        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`,
+        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&[filters][download][$gt]=20&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`,
         fetchDataFromApi,
         {
             fallbackData: products,
