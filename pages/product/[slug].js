@@ -55,7 +55,7 @@ const ProductDetails = ({ product, products }) => {
 						</div>
 
 						{/* PRODUCT PRICE */}
-						<div className="flex items-center">
+						{/* <div className="flex items-center">
 							<p className="mr-2 text-lg font-semibold">
 								$;{p.price}
 							</p>
@@ -73,7 +73,7 @@ const ProductDetails = ({ product, products }) => {
 									</p>
 								</>
 							)}
-						</div>
+						</div> */}
 
 						<div className="text-md font-medium text-black/[0.5]">
 							excl. of taxes

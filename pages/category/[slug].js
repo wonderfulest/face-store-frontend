@@ -5,7 +5,7 @@ import { fetchDataFromApi } from "@/utils/api";
 import { shuffleArray } from "@/utils/helper";
 import useSWR from "swr";
 import { useRouter } from "next/router";
-const maxResult = 27;
+const maxResult = 99;
 
 const Category = ({ category, products, slug }) => {
     const [pageIndex, setPageIndex] = useState(1);
