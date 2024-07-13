@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 
 const ProductCard = ({ data: { attributes: p, id } }) => {
-  const displayPrice = p.price === 0 ? "Free" : `$${p.price}`;
+  const displayPrice = p.original_price === 0 ? "Free" : `$${p.original_price}`;
   const priceTextColor = p.price === 0 ? "text-green-500" : ""; // Choose the color you want for free
   const discountColor = p.price < p.original_price ? "text-green-500" : "";
 
@@ -23,9 +23,9 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
         <h2 className="text-lg font-medium">{p.name}</h2>
         <div className="flex items-center text-black/[0.5]">
            <p className={`mr-2 text-lg font-semibold ${priceTextColor}`}>
-           {/* {displayPrice} */}
+           {displayPrice}
           </p>
-{/* 
+          {/* 
           {p.original_price > 0 && (
             <>
               <p className="text-base font-medium line-through">
