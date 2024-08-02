@@ -75,9 +75,9 @@ const ProductDetails = ({ product, products }) => {
 							)}
 						</div> */}
 
-						<div className="text-md font-medium text-black/[0.5]">
+						{/* <div className="text-md font-medium text-black/[0.5]">
 							excl. of taxes
-						</div>
+						</div> */}
 						<div className="text-md font-medium text-black/[0.5] mb-20">
 							{/* {`(Also includes all applicable duties)`} */}
 						</div>
