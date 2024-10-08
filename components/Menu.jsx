@@ -43,9 +43,9 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 													>
 														<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
 															{c.name}
-															<span className="opacity-50 text-sm">
+															{/* <span className="opacity-50 text-sm">
 																{`(${c.products.data.length})`}
-															</span>
+															</span> */}
 														</li>
 													</Link>
 												);
