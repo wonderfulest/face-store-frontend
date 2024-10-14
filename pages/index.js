@@ -69,7 +69,7 @@ export default function Home({ populates, series, productsNew }) {
         </div>
 
         {/* New Slider start */}
-        <div className="text-5xl mt-24 mb-12">New</div>
+        {/* <div className="text-5xl mt-24 mb-12">New</div>
         <div className="px-5 md:px-0">
           <Slider {...settings}>
             {productsNew?.data?.map((product) => (
@@ -78,7 +78,7 @@ export default function Home({ populates, series, productsNew }) {
               </div>
             ))}
           </Slider>
-        </div>
+        </div> */}
         {/* New Slider end */}
 
         {/* heading and paragaph start */}
