@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductCard = ({ data: { attributes: p, id } }) => {
+const ProductCard = ({ data: { attributes: p, id }, imgWidth = 500, imgHeight = 500  }) => {
   const displayPrice = p.original_price === 0 ? "Free" : `$${p.original_price}`;
   const priceTextColor = p.price === 0 ? "text-green-500" : ""; // Choose the color you want for free
   const discountColor = p.price < p.original_price ? "text-green-500" : "";
@@ -14,10 +14,11 @@ const ProductCard = ({ data: { attributes: p, id } }) => {
       className="transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer"
     >
       <Image
-        width={500}
-        height={500}
+        width={imgWidth}
+        height={imgHeight}
         src={p.thumbnail?.data?.attributes?.url || ''}
         alt={p.name}
+        className={p.adapted === 1 ? "rounded-full" : ""}
       />
       <div className="p-4 text-black/[0.9]">
         <h2 className="text-lg font-medium">{p.name}</h2>

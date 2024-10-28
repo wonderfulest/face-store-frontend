@@ -52,9 +52,9 @@ export default function Home({ populates, series, productsNew }) {
   };
   return (
     <main>
-      {/* <div className="mt-24">
+      <div className="mt-24">
 				<HeroBanner />
-			</div> */}
+			</div>
 
       <Wrapper>
         <div className="mt-24">
@@ -69,16 +69,16 @@ export default function Home({ populates, series, productsNew }) {
         </div>
 
         {/* New Slider start */}
-        {/* <div className="text-5xl mt-24 mb-12">New</div>
+        <div className="text-5xl mt-24 mb-12">New</div>
         <div className="px-5 md:px-0">
           <Slider {...settings}>
             {productsNew?.data?.map((product) => (
               <div key={product?.id} className="px-2">
-                <ProductCard data={product} />
+                <ProductCard data={product} imgWidth={300} imgHeight={300} />
               </div>
             ))}
           </Slider>
-        </div> */}
+        </div>
         {/* New Slider end */}
 
         {/* heading and paragaph start */}
@@ -123,6 +123,16 @@ export async function getStaticProps() {
   const series = {
     data: [
       {
+        id: 4,
+        attributes: {
+          name: "Halloween",
+          slug: "halloween",
+          // Playful Spirit
+          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1730082008/011dcca4_6adc_4e99_b56e_fa3a5b59fb0e_08d1c0d244.png",
+          adapted: 1,
+        },
+      },
+      {
         id: 1,
         attributes: {
           name: "Whole",
@@ -164,15 +174,7 @@ export async function getStaticProps() {
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702652213/app_images_2_F73_E3_CAED_1802_1_C33_F012_D662_D521_A451_2_F1699190724039_8359ea8ca2.png",
         },
       },
-      {
-        id: 4,
-        attributes: {
-          name: "Analog",
-          slug: "analog",
-          // Classical Analog Pro
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1705068295/app_images_2_F2_C7_A67_C6_0_E69_C41_D_5_F8_E_C7_C99023_F374_2_F1704982446251_a1ba4d236b.png",
-        },
-      },
+      
       // {
       // 	id: 5,
       // 	attributes: {
@@ -233,6 +235,7 @@ export async function getStaticProps() {
     Date.now() - 0 * 24 * 60 * 60 * 1000
   ).toISOString();
   const populates = await fetchDataFromApi(
+    // filters[adapted][$eq]=1&
     `/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc&filters[createdAt][$gt]=${last100days}&filters[createdAt][$lt]=${last10days}`
   );
   shuffleArray(populates.data);

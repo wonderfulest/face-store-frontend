@@ -17,6 +17,7 @@ const ProductDetailsCarousel = ({ images }) => {
                         key={img.id}
                         src={img.attributes.url}
                         alt={img.attributes.name}
+                        className="rounded-full"
                     />
                 ))}
                 {/* <img src="/p2.png" />
