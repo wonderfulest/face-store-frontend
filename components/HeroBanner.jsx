@@ -33,12 +33,12 @@ const HeroBanner = () => {
 			>
 				 <div className="relative text-white text-[20px] w-full max-w-[1000px] mx-auto">
 					<img
-						src="/slide-halloween.png"
+						src="https://res.cloudinary.com/dpgpmyswj/image/upload/v1730093763/slide_halloween_eefe231c23.png?updated_at=2024-10-28T05:36:05.617Z"
 						className="aspect-[16/10] md:aspect-auto object-cover"
 					/>
 					<div
 						onClick={() => {
-							window.open("/product/halloween", "_blank");
+							window.open("/category/halloween", "_blank");
 						}}
 						className="px-[15px] md:px-[40px] py-[10px] md:py-[25px] font-oswald bg-white absolute bottom-[25px] md:bottom-[75px] left-0 text-black/[0.9] text-[15px] md:text-[30px] uppercase font-medium cursor-pointer hover:opacity-90"
 					>

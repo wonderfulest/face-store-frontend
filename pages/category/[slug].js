@@ -16,7 +16,7 @@ const Category = ({ category, products, slug }) => {
     }, [query]);
 
     const { data, error, isLoading } = useSWR(
-        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&[filters][download][$gt]=20&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`,
+        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&[filters][download][$gt]=1&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`,
         fetchDataFromApi,
         {
             fallbackData: products,
