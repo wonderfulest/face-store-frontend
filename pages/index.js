@@ -52,9 +52,9 @@ export default function Home({ populates, series, productsNew }) {
   };
   return (
     <main>
-      {/* <div className="mt-24">
+      <div className="mt-24">
 				<HeroBanner />
-			</div> */}
+			</div>
 
       <Wrapper>
         {/* <div className="mt-24"> */}
@@ -123,15 +123,24 @@ export async function getStaticProps() {
   const series = {
     data: [
       {
-        id: 4,
-        attributes: {
-          name: "Halloween",
-          slug: "halloween",
-          // Playful Spirit
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1730082008/011dcca4_6adc_4e99_b56e_fa3a5b59fb0e_08d1c0d244.png",
+      	id: 9,
+      	attributes: {
+      		name: "Christmas",
+      		slug: "christmas",
+      		url: "https://garmin-face.s3.ap-southeast-2.amazonaws.com/591d20b3_6c75_43b0_9204_6f9549eaf384_5b5a21e52a.png",
           adapted: 1,
-        },
+      	}
       },
+      // {
+      //   id: 4,
+      //   attributes: {
+      //     name: "Halloween",
+      //     slug: "halloween",
+      //     // Playful Spirit
+      //     url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1730082008/011dcca4_6adc_4e99_b56e_fa3a5b59fb0e_08d1c0d244.png",
+      //     adapted: 1,
+      //   },
+      // },
       {
         id: 1,
         attributes: {
@@ -198,14 +207,6 @@ export async function getStaticProps() {
           url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708854094/cover_image_23f5100a78.gif",
         },
       },
-      // {
-      // 	id: 9,
-      // 	attributes: {
-      // 		name: "Christmas",
-      // 		slug: "christmas",
-      // 		url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702653226/app_images_2_FA_2863698_D275_139_E_869_A_513_BAF_44_B8_E4_2_F1702474905871_12057cabce.png"
-      // 	}
-      // },
       {
         id: 10,
         attributes: {
