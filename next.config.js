@@ -5,7 +5,7 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
     images: {
-        unoptimized: false,
+        unoptimized: true,
         domains: ["res.cloudinary.com", "garmin-face.s3.ap-southeast-2.amazonaws.com"],
         remotePatterns: [
             {
