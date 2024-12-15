@@ -5,6 +5,7 @@ const nextConfig = {
         ignoreDuringBuilds: true,
     },
     images: {
+        unoptimized: false,
         domains: ["res.cloudinary.com", "garmin-face.s3.ap-southeast-2.amazonaws.com"],
         remotePatterns: [
             {
@@ -21,7 +22,6 @@ const nextConfig = {
                 port: '3000',
                 pathname: '**',
             },
-              
         ],
     },
 };
