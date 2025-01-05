@@ -52,9 +52,9 @@ export default function Home({ populates, series, productsNew }) {
   };
   return (
     <main>
-      <div className="mt-24">
+      {/* <div className="mt-24">
 				<HeroBanner />
-			</div>
+			</div> */}
 
       <Wrapper>
         {/* <div className="mt-24"> */}
