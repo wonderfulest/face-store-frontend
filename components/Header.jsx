@@ -52,11 +52,11 @@ const Header = () => {
 
     return (
         <header
-            className={`w-full h-[50px] md:h-[80px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show}`}
+            className={`w-full h-[60px] md:h-[90px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show} shadow-sm`}
         >
             <Wrapper className="h-[60px] flex justify-between items-center">
                 <Link href="/">
-                    <img src="/logo.svg" className="w-[100px] md:w-[160px]" />
+                    <img src="/logo.svg" className="w-[120px] md:w-[180px]" />
                 </Link>
 
                 <Menu
@@ -79,8 +79,8 @@ const Header = () => {
                     
                     {/* Icon end */}
 
-                    {/* Icon start */}
-                    <Link href="/cart">
+                    {/* Shopping cart icon hidden as requested */}
+                    {/* <Link href="/cart">
                         <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
                             <BsCart className="text-[15px] md:text-[20px]" />
                             {cartItems.length > 0 && (
@@ -89,7 +89,7 @@ const Header = () => {
                                 </div>
                             )}
                         </div>
-                    </Link>
+                    </Link> */}
                     {/* Icon end */}
 
                     {/* Mobile icon start */}

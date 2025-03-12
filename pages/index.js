@@ -51,67 +51,158 @@ export default function Home({ populates, series, productsNew }) {
     ],
   };
   return (
-    <main>
-      {/* <div className="mt-24">
-				<HeroBanner />
-			</div> */}
-
-      <Wrapper>
-        {/* <div className="mt-24"> */}
-          {/* <SearchCard onSearch={onSearch} /> */}
-          <div className="px-5 md:px-0">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
+    <main className="bg-gray-50">
+      {/* Search Section with blue gradient background */}
+      <section className="bg-gradient-to-b from-blue-50 to-gray-50 py-12 mb-0 border-b border-gray-200 shadow-sm">
+        <Wrapper>
+          <div className="flex justify-center items-center">
+            <div className="w-full">
+              <SearchCard onSearch={onSearch} />
+            </div>
+          </div>
+        </Wrapper>
+      </section>
+      
+      {/* Search Results Section */}
+      {filteredProducts?.data?.length > 0 && (
+        <section className="py-16 bg-white">
+          <Wrapper>
+            <div className="flex items-center justify-between mb-10">
+              <h2 className="text-3xl font-bold">Search Results</h2>
+              <span className="text-gray-500">{filteredProducts?.data?.length} items found</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-0">
               {filteredProducts?.data?.map((product) => (
-                <ProductCard key={product?.id} data={product} />
+                <div className="flex justify-center">
+                  <ProductCard key={product?.id} data={product} imgWidth={340} imgHeight={340} />
+                </div>
               ))}
             </div>
-          {/* </div> */}
-        </div>
+          </Wrapper>
+        </section>
+      )}
 
-        {/* New Slider start */}
-        <div className="text-5xl mt-24 mb-12">New</div>
-        <div className="px-5 md:px-0">
-          <Slider {...settings}>
-            {productsNew?.data?.map((product) => (
-              <div key={product?.id} className="px-2">
-                <ProductCard data={product} imgWidth={300} imgHeight={300} />
+      {/* New Watches Section with light background */}
+      <section className="py-16 bg-white">
+        <Wrapper>
+          <div className="flex items-center mb-10">
+            <div className="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+              <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold">New Arrivals</h2>
+          </div>
+          <div className="px-4 md:px-0">
+            <Slider {...settings}>
+              {productsNew?.data?.map((product) => (
+                <div key={product?.id} className="px-1 flex justify-center">
+                  <ProductCard data={product} imgWidth={340} imgHeight={340} />
+                </div>
+              ))}
+            </Slider>
+          </div>
+        </Wrapper>
+      </section>
+
+      {/* Feature Section with full width and gradient */}
+      <section className="py-20 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <div className="relative max-w-[1200px] mx-auto px-6 md:px-10 py-16 md:py-20 rounded-3xl shadow-lg overflow-hidden">
+          {/* Decorative elements */}
+          <div className="absolute top-0 left-0 w-32 h-32 bg-blue-100 rounded-full opacity-50 -translate-x-1/2 -translate-y-1/2"></div>
+          <div className="absolute bottom-0 right-0 w-40 h-40 bg-purple-100 rounded-full opacity-50 translate-x-1/3 translate-y-1/3"></div>
+          <div className="absolute top-1/4 right-10 w-8 h-8 bg-yellow-300 rounded-full opacity-70"></div>
+          <div className="absolute bottom-1/4 left-10 w-10 h-10 bg-green-200 rounded-full opacity-60"></div>
+          <div className="absolute top-3/4 right-1/4 w-6 h-6 bg-pink-200 rounded-full opacity-70"></div>
+          
+          {/* Content */}
+          <div className="relative text-center z-10">
+            <div className="inline-block px-4 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium mb-6 transform hover:scale-105 transition-transform">
+              ELEVATE YOUR GARMIN EXPERIENCE
+            </div>
+            
+            <h2 className="text-[36px] md:text-[48px] mb-8 font-bold leading-tight bg-gradient-to-r from-blue-700 to-purple-600 text-transparent bg-clip-text">
+              Transform Your Watch Into A Masterpiece
+            </h2>
+            
+            <div className="text-md md:text-xl text-gray-700 max-w-[800px] mx-auto leading-relaxed">
+              Discover our curated collection of premium watch faces designed exclusively for Garmin devices. Each design balances stunning aesthetics with practical functionality, giving you:
+              
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 text-left">
+                <div className="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+                  <div className="flex-shrink-0 bg-blue-100 rounded-full p-3 mb-4 inline-block">
+                    <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Unique Style</h3>
+                  <p className="text-gray-600">Express your personality with designs you won't find anywhere else</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+                  <div className="flex-shrink-0 bg-green-100 rounded-full p-3 mb-4 inline-block">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Health Tracking</h3>
+                  <p className="text-gray-600">Monitor your vitals with beautiful, easy-to-read displays</p>
+                </div>
+                
+                <div className="bg-white p-6 rounded-xl shadow-md transform hover:scale-105 transition-all duration-300">
+                  <div className="flex-shrink-0 bg-purple-100 rounded-full p-3 mb-4 inline-block">
+                    <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                    </svg>
+                  </div>
+                  <h3 className="font-bold text-lg text-gray-900 mb-2">Battery Efficient</h3>
+                  <p className="text-gray-600">Optimized designs that won't drain your watch battery</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Series Section with white background */}
+      <section className="py-16 bg-white">
+        <Wrapper>
+          <div className="flex items-center mb-10">
+            <div className="w-10 h-10 rounded-full bg-indigo-100 flex items-center justify-center mr-4">
+              <svg className="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
+              </svg>
+            </div>
+            <h2 className="text-3xl font-bold">Browse by Series</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 md:px-0">
+            {series?.data?.map((product) => (
+              <div className="flex justify-center">
+                <SeriesCard key={product?.id} data={product} />
               </div>
             ))}
-          </Slider>
-        </div>
-        {/* New Slider end */}
-
-        {/* heading and paragaph start */}
-        <div className="text-center max-w-[800px] mx-auto my-[50px] mb-[25px] md:my-[80px]">
-          <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
-            Unique, Stylish Wristwear！
           </div>
-          <div className="text-md md:text-xl">
-            Discover uniquely designed watch faces that embody both personality
-            and health-conscious style, crafted exclusively for Garmin. Elevate
-            your wristwear, showcasing individuality while prioritizing
-            well-being.
-          </div>
-        </div>
-        {/* heading and paragaph end */}
-        {/* Series grid start */}
-        <div className="text-5xl mt-24 mb-12">Series</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-14 px-5 md:px-0">
-          {series?.data?.map((product) => (
-            <SeriesCard key={product?.id} data={product} />
-          ))}
-        </div>
-        {/* Series grid end */}
+        </Wrapper>
+      </section>
 
-        {/* products grid start */}
-        <div className="text-5xl mt-24 mb-12">🔥Hot🔥</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
-          {populates?.data?.map((product) => (
-            <ProductCard key={product?.id} data={product} />
-          ))}
-        </div>
-        {/* products grid end */}
-      </Wrapper>
+      {/* Hot Products Section with white background */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <Wrapper>
+          <div className="flex items-center mb-10">
+            <div className="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center mr-4">
+              <span className="text-red-500 text-xl">🔥</span>
+            </div>
+            <h2 className="text-3xl font-bold">Trending Now</h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-0">
+            {populates?.data?.map((product) => (
+              <div className="flex justify-center">
+                <ProductCard key={product?.id} data={product} imgWidth={340} imgHeight={340} />
+              </div>
+            ))}
+          </div>
+        </Wrapper>
+      </section>
     </main>
   );
 }

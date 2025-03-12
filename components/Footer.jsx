@@ -1,18 +1,44 @@
 import Link from "next/link";
-import React from "react";
-import { FaFacebookF, FaTwitter, FaYoutube, FaInstagram } from "react-icons/fa";
+import React, { useState, useEffect, useRef } from "react";
 import Wrapper from "./Wrapper";
 
 const Footer = () => {
+    const [expanded, setExpanded] = useState(false);
+    const footerRef = useRef(null);
+    
+    // Handle mouse enter/leave events
+    const handleMouseEnter = () => {
+        setExpanded(true);
+    };
+    
+    const handleMouseLeave = () => {
+        setExpanded(false);
+    };
+
     return (
-        <footer className="bg-black text-white pt-3 pb-3">
-            <Wrapper className="flex justify-between mt-5 mb-5 flex-col md:flex-row gap-[10px] md:gap-0">
-                {/* LEFT START */}
-                <div className="text-[12px] text-white/[0.5] hover:text-white cursor-pointer text-center md:text-left">
-                    © 2023 Garminface, Inc. All Rights Reserved
-                </div>
-                {/* LEFT END */}
-            </Wrapper>
+        <footer 
+            ref={footerRef}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={`transition-all duration-300 ${expanded ? "bg-black" : "bg-black/80 backdrop-blur-sm"} text-white fixed bottom-0 left-0 right-0 z-10 shadow-lg`}
+        >
+            {/* Footer content - expands on hover */}
+            <div className={`overflow-hidden transition-all duration-300 ${expanded ? "max-h-32" : "max-h-0"}`}>
+                <Wrapper className="flex justify-between py-4 flex-col md:flex-row gap-[50px] md:gap-0">
+                    {/* LEFT START */}
+                    <div className="text-[15px] text-white/[0.9] hover:text-white cursor-pointer text-center md:text-left">
+                        <div>© 2025 WuKong OÜ. All Rights Reserved</div>
+                        <div className="mt-1">Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 15551, Estonia</div>
+                        <div className="mt-1">Email: wonder.gface@gmail.com</div>
+                    </div>
+                    {/* LEFT END */}
+                </Wrapper>
+            </div>
+
+            {/* Minimal footer - always visible */}
+            <div className="py-2 text-center text-sm text-white/80 hover:text-white/90 transition-colors">
+                © 2025 WuKong OÜ | <Link href="/contact" className="text-blue-300 hover:text-blue-200 underline transition-colors">Contact</Link> | <Link href="/faq" className="text-blue-300 hover:text-blue-200 underline transition-colors">FAQ</Link>
+            </div>
         </footer>
     );
 };

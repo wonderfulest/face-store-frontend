@@ -14,21 +14,21 @@ const data = [
 
 const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 	return (
-		<ul className="hidden md:flex items-center gap-8 font-medium text-black">
+		<ul className="hidden md:flex items-center gap-8 font-semibold text-black text-[18px]">
 			{data.map((item) => {
 				return (
 					<React.Fragment key={item.id}>
 						{!!item?.subMenu ? (
 							<li
-								className="cursor-pointer flex items-center gap-2 relative"
+								className="cursor-pointer flex items-center gap-2 relative hover:text-blue-600 transition-colors"
 								onMouseEnter={() => setShowCatMenu(true)}
 								onMouseLeave={() => setShowCatMenu(false)}
 							>
 								{item.name}
-								<BsChevronDown size={14} />
+								<BsChevronDown size={16} />
 
 								{showCatMenu && (
-									<ul className="bg-white absolute top-6 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg">
+									<ul className="bg-white absolute top-8 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg rounded-md">
 										{categories?.map(
 											({ attributes: c, id }) => {
 												return (
@@ -41,7 +41,7 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 															)
 														}
 													>
-														<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
+														<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] hover:text-blue-600 rounded-md text-[16px]">
 															{c.name}
 															{/* <span className="opacity-50 text-sm">
 																{`(${c.products.data.length})`}
@@ -55,7 +55,7 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 								)}
 							</li>
 						) : (
-							<li className="cursor-pointer">
+							<li className="cursor-pointer hover:text-blue-600 transition-colors">
 								<Link href={item?.url}>{item.name}</Link>
 							</li>
 						)}
