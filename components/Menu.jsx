@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { BsChevronDown } from "react-icons/bs";
 
@@ -13,6 +13,37 @@ const data = [
 ];
 
 const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
+	const [menuTimeoutId, setMenuTimeoutId] = useState(null);
+	const menuRef = useRef(null);
+	
+	// Handle mouse enter on the menu item
+	const handleMouseEnter = () => {
+		// Clear any existing timeout to close the menu
+		if (menuTimeoutId) {
+			clearTimeout(menuTimeoutId);
+			setMenuTimeoutId(null);
+		}
+		setShowCatMenu(true);
+	};
+	
+	// Handle mouse leave with delay
+	const handleMouseLeave = () => {
+		// Set a timeout before closing the menu
+		const timeoutId = setTimeout(() => {
+			setShowCatMenu(false);
+		}, 300); // 300ms delay before closing
+		setMenuTimeoutId(timeoutId);
+	};
+	
+	// Clean up timeout on unmount
+	useEffect(() => {
+		return () => {
+			if (menuTimeoutId) {
+				clearTimeout(menuTimeoutId);
+			}
+		};
+	}, [menuTimeoutId]);
+
 	return (
 		<ul className="hidden md:flex items-center gap-8 font-semibold text-black text-[18px]">
 			{data.map((item) => {
@@ -20,26 +51,27 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 					<React.Fragment key={item.id}>
 						{!!item?.subMenu ? (
 							<li
+								ref={menuRef}
 								className="cursor-pointer flex items-center gap-2 relative hover:text-blue-600 transition-colors"
-								onMouseEnter={() => setShowCatMenu(true)}
-								onMouseLeave={() => setShowCatMenu(false)}
+								onMouseEnter={handleMouseEnter}
+								onMouseLeave={handleMouseLeave}
 							>
 								{item.name}
 								<BsChevronDown size={16} />
 
 								{showCatMenu && (
-									<ul className="bg-white absolute top-8 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg rounded-md">
+									<ul 
+										className="bg-white absolute top-8 left-0 min-w-[250px] px-1 py-1 text-black shadow-lg rounded-md z-50"
+										onMouseEnter={handleMouseEnter}
+										onMouseLeave={handleMouseLeave}
+									>
 										{categories?.map(
 											({ attributes: c, id }) => {
 												return (
 													<Link
 														key={id}
 														href={`/category/${c.slug}`}
-														onClick={() =>
-															setShowCatMenu(
-																false
-															)
-														}
+														onClick={() => setShowCatMenu(false)}
 													>
 														<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] hover:text-blue-600 rounded-md text-[16px]">
 															{c.name}
