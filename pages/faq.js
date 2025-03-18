@@ -72,6 +72,49 @@ const Faq = () => {
 					"Sensor temperature(indoor): Display the measured values of the Garmin device's temperature sensor. If displayed as '--,' it indicates that the current device is not supported.",
 			},
 		],
+		"IQ Error Troubleshooting": [
+			{
+				q: "What should I do if I encounter an IQ error?",
+				a:
+					"If you experience an IQ error on your Garmin device, please follow these steps:<br>" +
+					"1. Connect your Garmin device to a computer.<br>" +
+					"2. Navigate to the directory <code>/Garmin/Apps/Logs/</code>.<br>" +
+					"3. Locate the log file <code>CIQ_LOG.bak</code>.<br>" +
+					"4. Send the log file to <strong>wonder.gface@gmail.com</strong>, along with a brief description of the issue."
+			},
+			{
+				q: "How long will it take to get a response after sending the log file?",
+				a:
+					"We typically review log files and provide solutions or further guidance within <strong>1-3 business days</strong>."
+			},
+			{
+				q: "What if I can't find the `CIQ_LOG.bak` file?",
+				a:
+					"Please ensure your Garmin device is properly connected to your computer and that the directory exists. If the file is still missing, try restarting your device and check the directory again after running the app."
+			},
+			{
+				q: "Are there alternative ways to retrieve the log file?",
+				a:
+					"Some devices may store log files differently. If <code>CIQ_LOG.bak</code> is missing, check the <code>/Garmin/Apps/Logs/</code> directory for other files with <code>.bak</code> or <code>.log</code> extensions and send them to us as well."
+			},
+			{
+				q: "What additional information should I provide when sending the log file?",
+				a:
+					"To help us diagnose the issue faster, please include the following details in your email:<br>" +
+					"- Your Garmin device model (e.g., Fenix 7, Forerunner 955, etc.).<br>" +
+					"- The name of the watch face or app installed (if applicable).<br>" +
+					"- A brief description of the issue (e.g., when it occurred, any specific actions that triggered it)."
+			},
+			{
+				q: "How can I prevent IQ errors from occurring?",
+				a:
+					"While not all IQ errors can be prevented, you can minimize their occurrence by:<br>" +
+					"1. Keeping your Garmin device firmware updated to the latest version.<br>" +
+					"2. Ensuring your Connect IQ apps and watch faces are updated.<br>" +
+					"3. Avoiding installing too many Connect IQ apps simultaneously, as this can strain device memory.<br>" +
+					"4. Restarting your device periodically to clear temporary data."
+			},
+		],
 	};
 
 	// State for active category and active question
