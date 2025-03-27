@@ -16,7 +16,7 @@ const SeriesCard = ({ data: { attributes: p, id } }) => {
         height={500}
         src={p.url}
         alt={p.name}
-        className={p.adapted == 1 ? "rounded-full" : ""}
+        className="rounded-full"
       />
 
       <div className="p-4 text-black/[0.9] flex items-center justify-center">

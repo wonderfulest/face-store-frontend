@@ -213,15 +213,15 @@ export async function getStaticProps() {
   );
   const series = {
     data: [
-      {
-      	id: 9,
-      	attributes: {
-      		name: "Christmas",
-      		slug: "christmas",
-      		url: "https://garmin-face.s3.ap-southeast-2.amazonaws.com/591d20b3_6c75_43b0_9204_6f9549eaf384_5b5a21e52a.png",
-          adapted: 1,
-      	}
-      },
+      // {
+      // 	id: 9,
+      // 	attributes: {
+      // 		name: "Christmas",
+      // 		slug: "christmas",
+      // 		url: "https://garmin-face.s3.ap-southeast-2.amazonaws.com/591d20b3_6c75_43b0_9204_6f9549eaf384_5b5a21e52a.png",
+      //     adapted: 1,
+      // 	}
+      // },
       // {
       //   id: 4,
       //   attributes: {
@@ -238,8 +238,10 @@ export async function getStaticProps() {
           name: "Whole",
           slug: "whole",
           url:
+            // Daisy Circle
+            "https://files.garminface.com/864f5645_87cc_4856_8fc7_04faf9d68d51_f5dbb03457.png"
             // Golden Textures
-            "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740595/app_images_2_F601_D41_EE_A469_436_F_363_F_27212_AD_0213_C_2_F1708349200978_16588b0a11.png",
+            // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740595/app_images_2_F601_D41_EE_A469_436_F_363_F_27212_AD_0213_C_2_F1708349200978_16588b0a11.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702476774/app_images_2_FC_8_A9_EEEB_4_EFA_D302_3_F9_A_9_E85238_CB_5_D3_2_F1702039498660_2655b3db59.png",
         },
       },
@@ -249,8 +251,10 @@ export async function getStaticProps() {
           name: "Venu",
           slug: "venu",
           url:
+          // Pink Whisper
+          "https://files.garminface.com/431cefe7_555e_49f2_ac60_aa41fe23bcb0_729e7a1b85.png"
             // Dark Sparkles
-            "https://res.cloudinary.com/dpgpmyswj/image/upload/v1706322003/app_images_2_F3723489_E_0201_702_B_1_CAA_976_CA_93_A47_E9_2_F1706274670543_c6bd65f631.png",
+            // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1706322003/app_images_2_F3723489_E_0201_702_B_1_CAA_976_CA_93_A47_E9_2_F1706274670543_c6bd65f631.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629312/app_images_2_FAED_2586_C_3762_CFEC_B9_CE_B9_F868_A8_A2_A4_2_F1698244461294_81d0747f6b.png",
         },
       },
@@ -259,8 +263,11 @@ export async function getStaticProps() {
         attributes: {
           name: "Animal",
           slug: "animal",
-          // Majestic Elephants
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704332909/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249474628_9b4e32317c.png",
+          url:
+           // Monochrome Cat
+           "https://files.garminface.com/wonder/fdbabe9e_8dd5_4f23_bab5_ef28be952380_aefd324974.png",
+           // Majestic Elephants
+           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704332909/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249474628_9b4e32317c.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702629573/app_images_2_F6_A11_E6_B9_2_E45_3_E27_E167_EE_1_F1_E31592_B_2_F1700486288602_1e00257076.png",
         },
       },
@@ -269,8 +276,11 @@ export async function getStaticProps() {
         attributes: {
           name: "Flower",
           slug: "flower",
+          url: 
+          // Water Droplets
+          "https://files.garminface.com/wonder/7b1e601a_04e0_4a11_a6b7_3a35420eaff2_f4eb07825d.png"
           // Pink Sakuri
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704333410/app_images_2_F42_DE_00_F8_E314_95_FD_ECE_6_C1_E95_A6_C8337_2_F1703249865073_9acdd5422c.png",
+          // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704333410/app_images_2_F42_DE_00_F8_E314_95_FD_ECE_6_C1_E95_A6_C8337_2_F1703249865073_9acdd5422c.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702652213/app_images_2_F73_E3_CAED_1802_1_C33_F012_D662_D521_A451_2_F1699190724039_8359ea8ca2.png",
         },
       },
@@ -295,7 +305,10 @@ export async function getStaticProps() {
         attributes: {
           name: "Digital",
           slug: "digital",
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708854094/cover_image_23f5100a78.gif",
+          url:
+          //Arctic Fox
+          "https://files.garminface.com/a019f7d9_889f_4b4c_bbcf_4f491d3fba89_899762bd69.png"
+          // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708854094/cover_image_23f5100a78.gif",
         },
       },
       {
@@ -303,8 +316,11 @@ export async function getStaticProps() {
         attributes: {
           name: "Landscape",
           slug: "landscape",
-          // Dwarf Pine
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740369/app_images_2_FA_3869262_D98_E_D5_B4_2178_DFEE_20_BD_4440_2_F1707916860499_ef0ce7331b.png",
+          url: 
+          // Peak Embrace
+          "https://files.garminface.com/823704cd_043c_4338_b782_fc765b6816a4_450c20850f.png"
+             // Dwarf Pine
+          // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1708740369/app_images_2_FA_3869262_D98_E_D5_B4_2178_DFEE_20_BD_4440_2_F1707916860499_ef0ce7331b.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1702654379/app_images_2_FA_6179656_2_F28_53_FF_5427_422601_E9_C750_2_F1701869510452_1f1af7886d.png",
         },
       },
@@ -313,11 +329,27 @@ export async function getStaticProps() {
         attributes: {
           name: "Fantasy",
           slug: "fantasy",
+          url: 
+          // Pulse Shine
+          "https://files.garminface.com/60b8b211_1bd5_483a_a0ca_83600168ded9_5a235d73bc.png"
           // Stellar Dawn
-          url: "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
+          // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
           // "https://res.cloudinary.com/dpgpmyswj/image/upload/v1704334194/app_images_2_F975488_C2_0_F21_7_FD_0_4_FB_5_263_C20535428_2_F1703249142135_cef5f25bbe.png",
         },
       },
+      {
+        id: 14,
+        attributes: {
+          name: "Galaxy",
+          slug: "galaxy",
+          url: 
+          // Icey Terrain
+          "https://files.garminface.com/793d93ae_8201_40a0_a235_ac6b1c26262d_1dcc1dc45e.png"
+       
+          // Blue Cosmos
+           // "https://files.garminface.com/0017eccf_3c1c_4e19_a634_0a724723e914_f600039ecb.png"
+        },
+      }
     ],
   };
   const last100days = new Date(

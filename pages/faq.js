@@ -27,16 +27,49 @@ const Faq = () => {
 					"If you do not want to pay for the app or clockface, remove the app, or install another clockface from the appstore, and the messages will automatically stop.",
 			},
 		],
-		"Theme & Display Settings": [
+		"Time & Date Settings": [
+		
 			{
-				q: "Is it possible to change text size?",
+				q: "How do I switch between 12-hour and 24-hour formats on my watch?",
 				a:
-					"Certainly! You just need to select the desired font size in the settings, and you can choose from normal, or large."
+					"You can change the time format on your watch by navigating to: Clocks => Time => Time Format. " +
+					"Select 12-hour format to use AM/PM notation. " +
+					"Select 24-hour format to display time in the 00:00 ~ 23:59 format."
 			},
 			{
-				q: "What is the purpose of the Mirror feature?",
+				q: "How can I hide the leading zero in the 12-hour format?",
 				a:
-					"Originally designed for left-handed users, sometimes it also produces very interesting effects."
+					"On your Connect App, you can choose whether to display a leading zero for the hour: " +
+					"<br>Leading Zero Enabled: 08:30 AM " +
+					"<br>Leading Zero Disabled: 8:30 AM " +
+					"<br>You can find this option in the watch face settings within the Connect App."
+			},
+			{
+				q: "How do I enable AM/PM in the 12-hour format?",
+				a:
+					"When using the 12-hour format, the watch typically displays AM (morning) / PM (afternoon) to distinguish between different times of the day, for example: " +
+					"<br>8:30 AM " +
+					"<br>2:45 PM " +
+					"<br>If AM/PM is not displayed on your watch face, check the watch face settings and enable the AM/PM option if available."
+			},
+			{
+				q: "How is the 24-hour format displayed?",
+				a:
+					"When the 24-hour format is enabled, the time will be displayed in the 00:00 - 23:59 format without AM/PM notation. For example: " +
+					"<br>08:30 (morning) " +
+					"<br>14:45 (afternoon)"
+			},
+			{
+				q: "Can I display AM/PM above the seconds?",
+				a:
+					"This depends on the specific watch face design. Some watch faces allow custom positioning of AM/PM, so you may be able to place it above the seconds. You can try the following: " +
+					"<br>1. Check the watch face settings for an AM/PM display option and adjust its position. " +
+					"<br>2. Use a custom watch face or third-party app to modify the AM/PM display."
+			},
+			{
+				q: "What does the \"24H\" label mean?",
+				a:
+					"Some watches or apps may display a \"24H\" indicator to show that the watch is currently using the 24-hour format instead of the 12-hour AM/PM format."
 			},
 			{
 				q: "How to change the date format?",
