@@ -41,13 +41,19 @@ const Header = () => {
         };
     }, [lastScrollY]);
 
-    useEffect(() => {
+    useEffect( () => {
         fetchCategories();
     }, []);
 
     const fetchCategories = async () => {
-        const { data } = await fetchDataFromApi("/api/categories?populate=*");
-        setCategories(data);
+        console.log("222222 fetchCategories");
+        try {
+            const res = await fetchDataFromApi("/api/categories/all");
+            console.log("111111 res", res);
+            setCategories(res?.data || []);
+        } catch (error) {
+            console.error("Error fetching categories:", error);
+        }
     };
 
     return (

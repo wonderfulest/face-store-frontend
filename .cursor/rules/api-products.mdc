@@ -1,0 +1,48 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+### 分页查询产品
+GET {{baseUrl}}/api/products/page?pageNum=1&pageSize=2&orderBy=created_at:desc
+Content-Type: application/json
+Authorization: Bearer {{api_token}}
+
+返回：
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "pageNum": 1,
+    "pageSize": 1,
+    "total": 2230,
+    "pages": 2230,
+    "list": [
+      {
+        "appId": 2491,
+        "designId": "",
+        "name": "Wind Lantern",
+        "description": "",
+        "price": 1.39,
+        "garminImageUrl": "",
+        "garminStoreUrl": "https://apps.garmin.com/apps/fcbb4ec2-33b2-4b78-89f7-70bc468b0e2c",
+        "garminAppUuid": "c5085dd1-2f0e-4b8d-bb57-72a52a5d240b",
+        "trialLasts": 24.0,
+        "createdAt": "2025-03-12T13:12:26.550+00:00",
+        "updatedAt": "2025-03-12T05:23:21.665+00:00",
+        "isDeleted": 0,
+        "download": 10,
+        "purchase": 0,
+        "heroFile": {
+          "id": 10220,
+          "name": "f7413dfd-bb58-4227-9dba-3f3188979133.png",
+          "url": "https://files.garminface.com/f7413dfd_bb58_4227_9dba_3f3188979133_429e94015e.png",
+          "previewUrl": null,
+          "provider": "@strapi/provider-upload-aws-s3"
+        },
+        "backgroundFile": null
+      }
+    ]
+  }
+}

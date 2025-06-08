@@ -8,6 +8,9 @@ import { useRouter } from "next/router";
 const maxResult = 99;
 
 const Category = ({ category, products, slug }) => {
+    console.log("category", category);
+    console.log("products", products);
+    console.log("slug", slug);
     const [pageIndex, setPageIndex] = useState(1);
     const { query } = useRouter();
 
@@ -16,7 +19,7 @@ const Category = ({ category, products, slug }) => {
     }, [query]);
 
     const { data, error, isLoading } = useSWR(
-        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&[filters][download][$gt]=1&pagination[page]=${pageIndex}&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`,
+        `/api/products/page?pageNum=${pageIndex}&pageSize=${maxResult}&orderBy=download:desc&category=${slug}`,
         fetchDataFromApi,
         {
             fallbackData: products,
@@ -28,20 +31,20 @@ const Category = ({ category, products, slug }) => {
             <Wrapper>
                 <div className="text-center max-w-[800px] mx-auto mt-8 md:mt-0">
                     <div className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight">
-                        {category?.data?.[0]?.attributes?.name}
+                        {category?.name}
                     </div>
                 </div>
 
                 {/* products grid start */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
-                    {data?.data?.map((product) => (
-                        <ProductCard key={product?.id} data={product} />
+                    {data?.data?.list?.map((product) => (
+                        <ProductCard key={product?.appId} data={product} />
                     ))}
                 </div>
                 {/* products grid end */}
 
                 {/* PAGINATION BUTTONS START */}
-                {data?.meta?.pagination?.total > maxResult && (
+                {data?.data?.total > maxResult && (
                     <div className="flex gap-3 items-center justify-center my-16 md:my-0">
                         <button
                             className={`rounded py-2 px-4 bg-black text-white disabled:bg-gray-200 disabled:text-gray-500`}
@@ -52,14 +55,14 @@ const Category = ({ category, products, slug }) => {
                         </button>
 
                         <span className="font-bold">{`${pageIndex} of ${
-                            data && data.meta.pagination.pageCount
+                            data && data.data.pages
                         }`}</span>
 
                         <button
                             className={`rounded py-2 px-4 bg-black text-white disabled:bg-gray-200 disabled:text-gray-500`}
                             disabled={
                                 pageIndex ===
-                                (data && data.meta.pagination.pageCount)
+                                (data && data.data.pages)
                             }
                             onClick={() => setPageIndex(pageIndex + 1)}
                         >
@@ -82,10 +85,10 @@ const Category = ({ category, products, slug }) => {
 export default Category;
 
 export async function getStaticPaths() {
-    const category = await fetchDataFromApi("/api/categories?populate=*");
+    const category = await fetchDataFromApi("/api/categories/all");
     const paths = category?.data?.map((c) => ({
         params: {
-            slug: c.attributes.slug,
+            slug: c.slug,
         },
     }));
 
@@ -97,11 +100,10 @@ export async function getStaticPaths() {
 
 // `getStaticPaths` requires using `getStaticProps`
 export async function getStaticProps({ params: { slug } }) {
-    const category = await fetchDataFromApi(
-        `/api/categories?filters[slug][$eq]=${slug}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
-    );
+    const categories = await fetchDataFromApi("/api/categories/all");
+    const category = categories?.data?.find((c) => c.slug === slug);
     const products = await fetchDataFromApi(
-        `/api/products?populate=*&[filters][categories][slug][$eq]=${slug}&pagination[page]=1&pagination[pageSize]=${maxResult}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
+        `/api/products/page?pageNum=1&pageSize=${maxResult}&orderBy=download:desc&category=${slug}`
     );
 
     return {

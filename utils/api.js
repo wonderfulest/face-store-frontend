@@ -1,27 +1,40 @@
 import { API_URL, STRAPI_API_TOKEN } from "./urls";
 
+const getBaseUrl = () => {
+    if (typeof window !== 'undefined') {
+        // 浏览器环境
+        return API_URL;
+    }
+    // 服务器环境
+    return 'http://localhost:8088';
+};
+
 export const fetchDataFromApi = async (endpoint) => {
+    const baseUrl = getBaseUrl();
     const options = {
         method: "GET",
         headers: {
             Authorization: "Bearer " + STRAPI_API_TOKEN,
         },
     };
-    console.log("[GET] data from api");
-    console.log(`${API_URL}${endpoint}`, options);
+    console.log("[GET] data from api", endpoint);
+    console.log(`${baseUrl}${endpoint}`, options);
 
-    const res = await fetch(`${API_URL}${endpoint}`, options);
-    const data = await res.json();
-
-    return data;
+    try {
+        const res = await fetch(`${baseUrl}${endpoint}`, options);
+        console.log("333333 res", res);
+        const data = await res.json();
+        return data;
+    } catch (error) {
+        console.error("Error fetching data:", error);
+        return null;
+    }
 };
 
 export const makePostRequest = async (endpoint, payload) => {
-    
-    console.log("[POST] makePostRequest data from api");
-    console.log(`${API_URL}${endpoint}`, options);
+    const baseUrl = getBaseUrl();
 
-    const res = await fetch(`${API_URL}${endpoint}`, {
+    const res = await fetch(`${baseUrl}${endpoint}`, {
         method: "POST",
         headers: {
             Authorization: "Bearer " + STRAPI_API_TOKEN,

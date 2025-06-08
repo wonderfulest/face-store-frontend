@@ -4,6 +4,14 @@ const nextConfig = {
     eslint: {
         ignoreDuringBuilds: true,
     },
+    async rewrites() {
+        return [
+            {
+                source: '/api/:path*',
+                destination: 'http://localhost:8088/api/:path*',
+            },
+        ];
+    },
     images: {
         unoptimized: true,
         domains: ["res.cloudinary.com", "garmin-face.s3.ap-southeast-2.amazonaws.com"],

@@ -95,8 +95,8 @@ export default function Home({ populates, series, productsNew }) {
           </div>
           <div className="px-4 md:px-0">
             <Slider {...settings}>
-              {productsNew?.data?.map((product) => (
-                <div key={product?.id} className="px-1 flex justify-center">
+              {productsNew?.data?.list?.map((product) => (
+                <div key={product?.appId} className="px-1 flex justify-center">
                   <ProductCard data={product} imgWidth={340} imgHeight={340} />
                 </div>
               ))}
@@ -195,9 +195,9 @@ export default function Home({ populates, series, productsNew }) {
             <h2 className="text-3xl font-bold">Trending Now</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4 md:px-0">
-            {populates?.data?.map((product) => (
+            {populates?.data?.list?.map((product) => (
               <div className="flex justify-center">
-                <ProductCard key={product?.id} data={product} imgWidth={340} imgHeight={340} />
+                <ProductCard key={product?.appId} data={product} imgWidth={340} imgHeight={340} />
               </div>
             ))}
           </div>
@@ -209,7 +209,7 @@ export default function Home({ populates, series, productsNew }) {
 
 export async function getStaticProps() {
   const productsNew = await fetchDataFromApi(
-    "/api/products?populate=*&pagination[page]=1&pagination[pageSize]=21&sort=updatedAt:desc"
+    "/api/products/page?pageNum=1&pageSize=21&orderBy=updated_at:desc"
   );
   const series = {
     data: [
@@ -352,17 +352,11 @@ export async function getStaticProps() {
       }
     ],
   };
-  const last100days = new Date(
-    Date.now() - 120 * 24 * 60 * 60 * 1000
-  ).toISOString();
-  const last10days = new Date(
-    Date.now() - 0 * 24 * 60 * 60 * 1000
-  ).toISOString();
   const populates = await fetchDataFromApi(
-    // filters[adapted][$eq]=1&
-    `/api/products?populate=*&pagination[page]=1&pagination[pageSize]=60&sort[0]=download:desc&sort[1]=bundle_triggers:desc&filters[createdAt][$gt]=${last100days}&filters[createdAt][$lt]=${last10days}`
+    "/api/products/page?pageNum=1&pageSize=2&orderBy=created_at:desc"
   );
-  shuffleArray(populates.data);
+  console.log("populates", populates);
+  // shuffleArray(populates.data);
   return {
     props: {
       productsNew,

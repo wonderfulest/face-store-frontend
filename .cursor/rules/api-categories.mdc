@@ -1,0 +1,304 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+
+### 环境变量
+@baseUrl = http://localhost:8088
+@contentType = application/json
+@api_token = api_EH0jITu9NMWoRFYlNV-zgwO28LJradGX
+
+### 查询所有分类
+GET {{baseUrl}}/api/categories/all
+Content-Type: application/json
+Authorization: Bearer {{api_token}}
+
+返回：
+
+{
+  "code": 0,
+  "msg": "success",
+  "data": [
+    {
+      "id": 1,
+      "name": "Whole",
+      "slug": "whole",
+      "createdAt": "2023-12-12T05:31:06.432+00:00",
+      "updatedAt": "2023-12-12T05:31:22.602+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 2,
+      "name": "Animal",
+      "slug": "animal",
+      "createdAt": "2023-12-13T14:14:17.446+00:00",
+      "updatedAt": "2023-12-17T00:36:09.677+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 3,
+      "name": "Flower",
+      "slug": "flower",
+      "createdAt": "2023-12-14T07:27:09.799+00:00",
+      "updatedAt": "2023-12-17T00:20:46.662+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 4,
+      "name": "Analog",
+      "slug": "analog",
+      "createdAt": "2023-12-15T04:33:30.341+00:00",
+      "updatedAt": "2024-10-27T18:18:14.261+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 5,
+      "name": "Skull",
+      "slug": "skull",
+      "createdAt": "2023-12-16T06:30:45.729+00:00",
+      "updatedAt": "2023-12-17T07:30:21.889+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 6,
+      "name": "Mandala",
+      "slug": "mandala",
+      "createdAt": "2023-12-16T06:44:11.592+00:00",
+      "updatedAt": "2023-12-16T18:29:01.850+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 7,
+      "name": "Digital",
+      "slug": "digital",
+      "createdAt": "2023-12-16T17:48:44.598+00:00",
+      "updatedAt": "2024-10-27T18:18:30.323+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 8,
+      "name": "Venu",
+      "slug": "venu",
+      "createdAt": "2023-12-16T18:18:29.492+00:00",
+      "updatedAt": "2023-12-16T18:30:49.205+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 9,
+      "name": "Christmas",
+      "slug": "christmas",
+      "createdAt": "2023-12-19T17:40:47.470+00:00",
+      "updatedAt": "2024-12-14T23:26:36.795+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 10,
+      "name": "Landscape",
+      "slug": "landscape",
+      "createdAt": "2024-01-03T17:40:11.343+00:00",
+      "updatedAt": "2024-01-03T17:40:13.814+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 11,
+      "name": "Cyberpunk",
+      "slug": "cyberpunk",
+      "createdAt": "2024-01-03T17:43:58.199+00:00",
+      "updatedAt": "2024-06-21T20:02:02.557+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 12,
+      "name": "Cartoon",
+      "slug": "cartoon",
+      "createdAt": "2024-01-03T17:51:48.608+00:00",
+      "updatedAt": "2024-01-03T17:51:50.570+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 13,
+      "name": "Fantasy",
+      "slug": "fantasy",
+      "createdAt": "2024-01-03T17:56:21.139+00:00",
+      "updatedAt": "2024-01-03T17:56:24.158+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 14,
+      "name": "Fenix",
+      "slug": "fenix",
+      "createdAt": "2024-01-12T06:03:02.202+00:00",
+      "updatedAt": "2024-06-02T04:53:33.194+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 16,
+      "name": "Stylish",
+      "slug": "stylish",
+      "createdAt": "2024-02-07T17:33:27.596+00:00",
+      "updatedAt": "2024-02-07T17:33:29.249+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 17,
+      "name": "Neon",
+      "slug": "neon",
+      "createdAt": "2024-03-14T23:49:00.362+00:00",
+      "updatedAt": "2024-03-14T23:49:04.250+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 19,
+      "name": "Simple",
+      "slug": "simple",
+      "createdAt": "2024-03-15T00:05:22.079+00:00",
+      "updatedAt": "2024-06-21T14:56:03.956+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 20,
+      "name": "Strokes",
+      "slug": "strokes",
+      "createdAt": "2024-03-29T17:05:04.168+00:00",
+      "updatedAt": "2024-10-27T18:17:54.441+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 21,
+      "name": "Galaxy",
+      "slug": "galaxy",
+      "createdAt": "2024-03-29T17:20:23.426+00:00",
+      "updatedAt": "2024-03-29T17:20:25.417+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 22,
+      "name": "Nature",
+      "slug": "nature",
+      "createdAt": "2024-05-03T14:52:05.503+00:00",
+      "updatedAt": "2024-12-14T20:55:29.793+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 23,
+      "name": "Family",
+      "slug": "family",
+      "createdAt": "2024-05-03T14:54:08.644+00:00",
+      "updatedAt": "2024-06-02T04:53:23.088+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 24,
+      "name": "Halo",
+      "slug": "halo",
+      "createdAt": "2024-06-21T15:18:31.926+00:00",
+      "updatedAt": "2024-10-27T18:18:43.019+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 25,
+      "name": "Dots",
+      "slug": "dots",
+      "createdAt": "2024-06-21T15:22:47.763+00:00",
+      "updatedAt": "2024-10-27T18:18:50.026+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 26,
+      "name": "Retro",
+      "slug": "retro",
+      "createdAt": "2024-08-30T18:01:25.970+00:00",
+      "updatedAt": "2024-08-30T18:01:25.970+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 27,
+      "name": "Fun",
+      "slug": "fun",
+      "createdAt": "2024-08-30T18:01:59.420+00:00",
+      "updatedAt": "2024-08-30T18:01:59.420+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 28,
+      "name": "Bike",
+      "slug": "bike",
+      "createdAt": "2024-08-30T18:05:28.424+00:00",
+      "updatedAt": "2024-08-30T18:05:28.424+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 29,
+      "name": "Run",
+      "slug": "run",
+      "createdAt": "2024-08-30T18:05:47.730+00:00",
+      "updatedAt": "2024-08-30T18:05:47.730+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    },
+    {
+      "id": 30,
+      "name": "Mountain",
+      "slug": "mountain",
+      "createdAt": "2024-08-30T18:12:19.835+00:00",
+      "updatedAt": "2024-10-27T18:17:34.080+00:00",
+      "isDeleted": 0,
+      "version": 1,
+      "isActive": 1
+    }
+  ]
+}

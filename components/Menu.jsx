@@ -66,22 +66,20 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 										onMouseLeave={handleMouseLeave}
 									>
 										{categories?.map(
-											({ attributes: c, id }) => {
-												return (
-													<Link
-														key={id}
-														href={`/category/${c.slug}`}
-														onClick={() => setShowCatMenu(false)}
-													>
-														<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] hover:text-blue-600 rounded-md text-[16px]">
-															{c.name}
-															{/* <span className="opacity-50 text-sm">
-																{`(${c.products.data.length})`}
-															</span> */}
-														</li>
-													</Link>
-												);
-											}
+											(c) => (
+												<Link
+													key={c.id}
+													href={`/category/${c.slug}`}
+													onClick={() => setShowCatMenu(false)}
+												>
+													<li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] hover:text-blue-600 rounded-md text-[16px]">
+														{c.name}
+														{/* <span className="opacity-50 text-sm">
+															{`(${c.products.data.length})`}
+														</span> */}
+													</li>
+												</Link>
+											)
 										)}
 									</ul>
 								)}

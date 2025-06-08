@@ -16,7 +16,7 @@ const ProductDetails = ({ product, products }) => {
 	const [selectedSize, setSelectedSize] = useState();
 	const [showError, setShowError] = useState(false);
 	const dispatch = useDispatch();
-	const p = product?.data?.[0]?.attributes;
+	const p = product?.data?.list?.[0];
 
 	const notify = () => {
 		toast.success("Success. Check your cart!", {
@@ -38,7 +38,7 @@ const ProductDetails = ({ product, products }) => {
 				<div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
 					{/* left column start */}
 					<div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
-						<ProductDetailsCarousel images={p.image.data} />
+						<ProductDetailsCarousel images={[p?.heroFile]} />
 					</div>
 					{/* left column end */}
 
@@ -46,12 +46,12 @@ const ProductDetails = ({ product, products }) => {
 					<div className="flex-[1] py-3">
 						{/* PRODUCT TITLE */}
 						<div className="text-[34px] font-semibold mb-2 leading-tight">
-							{p.name}
+							{p?.name}
 						</div>
 
 						{/* PRODUCT SUBTITLE */}
 						<div className="text-lg font-semibold mb-5">
-							{p.subtitle}
+							{p?.description}
 						</div>
 
 						{/* PRODUCT PRICE */}
@@ -111,9 +111,7 @@ const ProductDetails = ({ product, products }) => {
 						<button
 							className="w-full py-4 rounded-full border-4 border-black bg-black text-white text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
-								window.open(p.garmin_appstore_url, "_blank");
-								// window.location.href = p.garmin_appstore_url;
-								// notify();
+								window.open(p?.garminStoreUrl, "_blank");
 							}}
 						>
 							Download
@@ -126,8 +124,6 @@ const ProductDetails = ({ product, products }) => {
 							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
 								window.open("https://kzl.io/code", "_blank");
-								// window.location.href = p.garmin_appstore_url;
-								// notify();
 							}}
 						>
 							Unlock Trial
@@ -140,7 +136,7 @@ const ProductDetails = ({ product, products }) => {
 								Product Details
 							</div>
 							<div className="markdown text-md mb-5">
-								<ReactMarkdown>{p.description}</ReactMarkdown>
+								<ReactMarkdown>{p?.description}</ReactMarkdown>
 							</div>
 						</div>
 					</div>
@@ -156,11 +152,10 @@ const ProductDetails = ({ product, products }) => {
 export default ProductDetails;
 
 export async function getStaticPaths() {
-	// 获取全部产品的slug
-	const products = await fetchDataFromApi("/api/products/slugs");
-	const paths = products?.map((p) => ({
+	const products = await fetchDataFromApi("/api/products/page?pageNum=1&pageSize=1000");
+	const paths = products?.data?.list?.map((p) => ({
 		params: {
-			slug: p.slug,
+			appId: p.appId.toString(),
 		},
 	}));
 	return {
@@ -169,16 +164,16 @@ export async function getStaticPaths() {
 	};
 }
 
-export async function getStaticProps({ params: { slug } }) {
+export async function getStaticProps({ params: { appId } }) {
 	const product = await fetchDataFromApi(
-		`/api/products?populate=*&filters[slug][$eq]=${slug}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
+		`/api/products/page?pageNum=1&pageSize=1&appId=${appId}`
 	);
 	const categories = [
 		"analog","animal","cartoon","christmas","cross-stitch","cyberpunk","digital","fantasy","fenix","flower","landscape","mandala","minimalist","neon","skull","stylish","venu","whole","world"
 	];
 	var randomCategory = categories[Math.floor(Math.random() * categories.length)];
 	const products = await fetchDataFromApi(
-		`/api/products?populate=*&[filters][slug][$ne]=${slug}&[filters][categories][slug][$eq]=${randomCategory}&sort[0]=download:desc&sort[1]=bundle_triggers:desc`
+		`/api/products/page?pageNum=1&pageSize=10&orderBy=download:desc&category=${randomCategory}&exclude=${appId}`
 	);
 	return {
 		props: {

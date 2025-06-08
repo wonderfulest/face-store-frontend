@@ -3,43 +3,33 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductCard = ({ data: { attributes: p, id }, imgWidth = 500, imgHeight = 500 }) => {
-  const displayPrice = p.original_price === 0 ? "Free" : `$${p.original_price}`;
-  const priceTextColor = p.price === 0 ? "text-green-500" : ""; // Choose the color you want for free
-  const discountColor = p.price < p.original_price ? "text-green-500" : "";
+const ProductCard = ({ data, imgWidth = 500, imgHeight = 500 }) => {
+  const displayPrice = data.price === 0 ? "Free" : `$${data.price}`;
+  const priceTextColor = data.price === 0 ? "text-green-500" : "";
 
   return (
     <Link
-      href={`/product/${p.slug}`}
+      href={`/product/${data.appId}`}
       className="transform overflow-hidden bg-white duration-200 hover:scale-105 cursor-pointer flex flex-col items-center"
     >
       <div className="flex justify-center w-full">
         <Image
           width={imgWidth}
           height={imgHeight}
-          src={p.thumbnail?.data?.attributes?.url || ''}
-          alt={p.name}
-          className={p.adapted === 1 ? "rounded-full" : ""}
+          src={data.heroFile?.url || ''}
+          alt={data.name}
+          className={data.adapted === 1 ? "rounded-full" : ""}
         />
       </div>
       <div className="p-4 text-black/[0.9] text-center w-full">
-        <h2 className="text-lg font-medium">{p.name}</h2>
+        <h2 className="text-lg font-medium">{data.name}</h2>
         <div className="flex items-center justify-center text-black/[0.5]">
           <p className={`mr-2 text-lg font-semibold ${priceTextColor}`}>
-            {/* {displayPrice} */}
+            {displayPrice}
           </p>
-          {/* 
-          {p.original_price > 0 && (
-            <>
-              <p className="text-base font-medium line-through">
-                ${p.original_price}
-              </p>
-              <p className={`ml-auto text-base font-medium ${discountColor}`}>
-                {getDiscountedPricePercentage(p.original_price, p.price)}% off
-              </p>
-            </>
-          )} */}
+         
         </div>
+        <div>{JSON.stringify(data)}</div>
       </div>
     </Link>
   );

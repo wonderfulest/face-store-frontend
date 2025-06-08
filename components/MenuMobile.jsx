@@ -34,29 +34,20 @@ const MenuMobile = ({
                                 {showCatMenu && (
                                     <ul className="bg-black/[0.05] -mx-5 mt-4 -mb-4">
                                         {categories?.map(
-                                            ({ attributes: c, id }) => {
-                                                return (
-                                                    <Link
-                                                        key={id}
-                                                        href={`/category/${c.slug}`}
-                                                        onClick={() => {
-                                                            setShowCatMenu(
-                                                                false
-                                                            );
-                                                            setMobileMenu(
-                                                                false
-                                                            );
-                                                        }}
-                                                    >
-                                                        <li className="py-4 px-8 border-t flex justify-between">
-                                                            {c.name}
-                                                            <span className="opacity-50 text-sm">
-                                                                {`(${c.products.data.length})`}
-                                                            </span>
-                                                        </li>
-                                                    </Link>
-                                                );
-                                            }
+                                            (c) => (
+                                                <Link
+                                                    key={c.id}
+                                                    href={`/category/${c.slug}`}
+                                                    onClick={() => {
+                                                        setShowCatMenu(false);
+                                                        setMobileMenu(false);
+                                                    }}
+                                                >
+                                                    <li className="py-4 px-8 border-t flex justify-between">
+                                                        {c.name}
+                                                    </li>
+                                                </Link>
+                                            )
                                         )}
                                     </ul>
                                 )}
