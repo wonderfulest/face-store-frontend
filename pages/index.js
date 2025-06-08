@@ -353,10 +353,10 @@ export async function getStaticProps() {
     ],
   };
   const populates = await fetchDataFromApi(
-    "/api/products/page?pageNum=1&pageSize=2&orderBy=created_at:desc"
+    "/api/products/page?pageNum=1&pageSize=99&orderBy=download:desc"
   );
   console.log("populates", populates);
-  // shuffleArray(populates.data);
+  shuffleArray(populates.data.list);
   return {
     props: {
       productsNew,

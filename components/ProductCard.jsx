@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const ProductCard = ({ data, imgWidth = 500, imgHeight = 500 }) => {
+const ProductCard = ({ data, imgWidth = 400, imgHeight = 400 }) => {
   const displayPrice = data.price === 0 ? "Free" : `$${data.price}`;
   const priceTextColor = data.price === 0 ? "text-green-500" : "";
 
@@ -16,9 +16,9 @@ const ProductCard = ({ data, imgWidth = 500, imgHeight = 500 }) => {
         <Image
           width={imgWidth}
           height={imgHeight}
-          src={data.heroFile?.url || ''}
+          src={data.heroFile?.url || ""}
           alt={data.name}
-          className={data.adapted === 1 ? "rounded-full" : ""}
+          className="rounded-full"
         />
       </div>
       <div className="p-4 text-black/[0.9] text-center w-full">
@@ -27,9 +27,8 @@ const ProductCard = ({ data, imgWidth = 500, imgHeight = 500 }) => {
           <p className={`mr-2 text-lg font-semibold ${priceTextColor}`}>
             {displayPrice}
           </p>
-         
         </div>
-        <div>{JSON.stringify(data)}</div>
+        {/* <div>{JSON.stringify(data)}</div> */}
       </div>
     </Link>
   );

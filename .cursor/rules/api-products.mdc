@@ -46,3 +46,39 @@ Authorization: Bearer {{api_token}}
     ]
   }
 }
+
+
+### 查询单个产品
+GET {{baseUrl}}/api/products/{{appId}}
+Content-Type: application/json
+Authorization: Bearer {{api_token}}
+
+{
+  "code": 0,
+  "msg": "success",
+  "data": {
+    "appId": 2487,
+    "designId": "",
+    "name": "Vision 001",
+    "description": "",
+    "price": 1.39,
+    "garminImageUrl": "",
+    "garminStoreUrl": "https://apps.garmin.com/apps/7d89fa1b-4dc6-43b9-b334-b980609dcd94",
+    "garminAppUuid": "84086c9a-4061-4524-9921-3451bd490788",
+    "trialLasts": 24.0,
+    "createdAt": "2025-03-12T13:12:16.942+00:00",
+    "updatedAt": "2025-03-12T05:23:01.140+00:00",
+    "isDeleted": 0,
+    "download": 10,
+    "purchase": 0,
+    "heroFile": {
+      "id": 10216,
+      "name": "5952fbd8-9f1e-4fb8-a025-704cfcac4152.png",
+      "url": "https://files.garminface.com/5952fbd8_9f1e_4fb8_a025_704cfcac4152_6d4ebc50c8.png",
+      "previewUrl": null,
+      "provider": "@strapi/provider-upload-aws-s3"
+    },
+    "backgroundFile": null
+  }
+}
+

@@ -11,12 +11,13 @@ import { addToCart } from "@/store/cartSlice";
 
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Image from "next/image";
 
 const ProductDetails = ({ product, products }) => {
 	const [selectedSize, setSelectedSize] = useState();
 	const [showError, setShowError] = useState(false);
 	const dispatch = useDispatch();
-	const p = product?.data?.list?.[0];
+	const p = product?.data;
 
 	const notify = () => {
 		toast.success("Success. Check your cart!", {
@@ -38,7 +39,15 @@ const ProductDetails = ({ product, products }) => {
 				<div className="flex flex-col lg:flex-row md:px-10 gap-[50px] lg:gap-[100px]">
 					{/* left column start */}
 					<div className="w-full md:w-auto flex-[1.5] max-w-[500px] lg:max-w-full mx-auto lg:mx-0">
-						<ProductDetailsCarousel images={[p?.heroFile]} />
+						<div className="relative w-96 h-96 max-w-full mx-auto overflow-hidden rounded-full bg-white flex items-center justify-center">
+							<Image
+								src={p?.heroFile?.url || ""}
+								alt={p?.heroFile?.name || ""}
+								fill
+								className="object-contain"
+								style={{ background: 'white' }}
+							/>
+						</div>
 					</div>
 					{/* left column end */}
 
@@ -55,7 +64,7 @@ const ProductDetails = ({ product, products }) => {
 						</div>
 
 						{/* PRODUCT PRICE */}
-						{/* <div className="flex items-center">
+						<div className="flex items-center">
 							<p className="mr-2 text-lg font-semibold">
 								$;{p.price}
 							</p>
@@ -73,7 +82,7 @@ const ProductDetails = ({ product, products }) => {
 									</p>
 								</>
 							)}
-						</div> */}
+						</div>
 
 						{/* <div className="text-md font-medium text-black/[0.5]">
 							excl. of taxes
@@ -123,7 +132,7 @@ const ProductDetails = ({ product, products }) => {
 						<button
 							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
-								window.open("https://kzl.io/code", "_blank");
+								window.open("https://wristo.io/code", "_blank");
 							}}
 						>
 							Unlock Trial
@@ -166,8 +175,9 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { appId } }) {
 	const product = await fetchDataFromApi(
-		`/api/products/page?pageNum=1&pageSize=1&appId=${appId}`
+		`/api/products/${appId}`
 	);
+	console.log("product", product);
 	const categories = [
 		"analog","animal","cartoon","christmas","cross-stitch","cyberpunk","digital","fantasy","fenix","flower","landscape","mandala","minimalist","neon","skull","stylish","venu","whole","world"
 	];

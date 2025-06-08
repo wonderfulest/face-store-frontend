@@ -17,7 +17,7 @@ export default function Home({ productsNew }) {
     if (searchTerm && searchTerm.length > 0) {
       searchTerm = searchTerm.toLowerCase();
       const results = await fetchDataFromApi(
-        `/api/products?populate=*&filters[slug][$contains]=${searchTerm}&sort[0]=download:desc&pagination[page]=1&pagination[pageSize]=60`
+        `/api/products/page?pageNum=1&pageSize=60&orderBy=download:desc`
       );
       setFilteredProducts(results);
     } else {
@@ -55,8 +55,8 @@ export default function Home({ productsNew }) {
       <Wrapper>
         {/* New Slider start */}
         <div className="text-5xl mt-24 mb-12">New</div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
-            {productsNew?.data?.map((product) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 my-14 px-5 md:px-0">
+            {productsNew?.data?.list?.map((product) => (
               <div key={product?.id} className="px-2">
                 <ProductCard data={product} />
                 </div>
@@ -70,10 +70,10 @@ export default function Home({ productsNew }) {
 
 export async function getStaticProps() {
   const productsNew = await fetchDataFromApi(
-    "/api/products?populate=*&[filters][download][$gt]=36&pagination[page]=1&pagination[pageSize]=60&sort=updatedAt:desc"
+    "/api/products/page?pageNum=1&pageSize=60&orderBy=download:desc"
   );
 
-//   shuffleArray(productsNew.data);
+  shuffleArray(productsNew.data.list);
   return {
     props: {
       productsNew,

@@ -36,7 +36,7 @@ const Category = ({ category, products, slug }) => {
                 </div>
 
                 {/* products grid start */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 px-5 md:px-0">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 my-14 px-5 md:px-0">
                     {data?.data?.list?.map((product) => (
                         <ProductCard key={product?.appId} data={product} />
                     ))}

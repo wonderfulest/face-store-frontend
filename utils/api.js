@@ -6,7 +6,7 @@ const getBaseUrl = () => {
         return API_URL;
     }
     // 服务器环境
-    return 'http://localhost:8088';
+    return 'https://api.wristo.io';
 };
 
 export const fetchDataFromApi = async (endpoint) => {
