@@ -132,7 +132,7 @@ const ProductDetails = ({ product, products }) => {
 						<button
 							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
-								window.open("https://wristo.io/code", "_blank");
+								window.open("https://pay.wristo.io/code", "_blank");
 							}}
 						>
 							Unlock Trial
