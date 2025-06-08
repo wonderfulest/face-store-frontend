@@ -1,16 +1,8 @@
 import { API_URL, STRAPI_API_TOKEN } from "./urls";
 
-const getBaseUrl = () => {
-    if (typeof window !== 'undefined') {
-        // 浏览器环境
-        return API_URL;
-    }
-    // 服务器环境
-    return 'https://api.wristo.io';
-};
 
 export const fetchDataFromApi = async (endpoint) => {
-    const baseUrl = getBaseUrl();
+    const baseUrl = API_URL;
     const options = {
         method: "GET",
         headers: {
@@ -32,7 +24,7 @@ export const fetchDataFromApi = async (endpoint) => {
 };
 
 export const makePostRequest = async (endpoint, payload) => {
-    const baseUrl = getBaseUrl();
+    const baseUrl = API_URL;
 
     const res = await fetch(`${baseUrl}${endpoint}`, {
         method: "POST",
