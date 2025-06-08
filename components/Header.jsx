@@ -46,10 +46,8 @@ const Header = () => {
     }, []);
 
     const fetchCategories = async () => {
-        console.log("222222 fetchCategories");
         try {
             const res = await fetchDataFromApi("/api/categories/all");
-            console.log("111111 res", res);
             setCategories(res?.data || []);
         } catch (error) {
             console.error("Error fetching categories:", error);
@@ -61,8 +59,15 @@ const Header = () => {
             className={`w-full h-[60px] md:h-[90px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${show} shadow-sm`}
         >
             <Wrapper className="h-[60px] flex justify-between items-center">
-                <Link href="/">
+                {/* <Link href="/">
                     <img src="/logo.svg" className="w-[120px] md:w-[180px]" />
+                </Link> */}
+                <Link href="/">
+                    <div className="flex items-center">
+                        <span className="text-2xl md:text-3xl font-bold tracking-widest">
+                            <span className="font-bold">W R I S T O</span>
+                        </span>
+                    </div>
                 </Link>
 
                 <Menu
