@@ -7,6 +7,8 @@ const data = [
 	{ id: 2, name: "New", url: "/new" },
 	{ id: 3, name: "Categories", subMenu: true },
 	{ id: 4, name: "FAQ", url: "/faq" },
+	{ id: 5, name: "Code", url: "https://pay.wristo.io/code" },
+	{ id: 6, name: "Studio", url: "https://studio.wristo.io" },
 	// { id: 4, name: "Plus", url: "/plus" },
 	// { id: 4, name: "Contact", url: "/contact" },
 	// { id: 5, name: "About", url: "/about" },
@@ -86,7 +88,13 @@ const Menu = ({ showCatMenu, setShowCatMenu, categories }) => {
 							</li>
 						) : (
 							<li className="cursor-pointer hover:text-blue-600 transition-colors">
-								<Link href={item?.url}>{item.name}</Link>
+								<Link 
+									href={item?.url} 
+									target={item?.url?.startsWith('http') ? '_blank' : undefined}
+									rel={item?.url?.startsWith('http') ? 'noopener noreferrer' : undefined}
+								>
+									{item.name}
+								</Link>
 							</li>
 						)}
 					</React.Fragment>
