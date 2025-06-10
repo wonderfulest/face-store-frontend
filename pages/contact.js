@@ -23,21 +23,7 @@ const Contact = () => {
 				<h1 className="text-[28px] md:text-[34px] mb-5 font-semibold leading-tight mx-auto text-center py-8">
 					Contact us
 				</h1>
-				<div className="mb-8 p-6 border border-gray-200 rounded-md bg-gray-50">
-					<h2 className="text-[20px] font-semibold mb-4">Company Information</h2>
-					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-						<div>
-							<h3 className="text-[16px] font-medium mb-2">WuKong OÜ</h3>
-							<p className="text-[14px] mb-1">Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 15551, Estonia</p>
-							<p className="text-[14px]">Email: <a href="mailto:wonder.gface@gmail.com" className="text-blue-600 hover:underline">wonder.gface@gmail.com</a></p>
-						</div>
-						{/* <div>
-							<h3 className="text-[16px] font-medium mb-2">Contact Agency: E-Residency Hub OÜ</h3>
-							<p className="text-[14px] mb-1">Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 10151, Estonia</p>
-							<p className="text-[14px]">Email: <a href="mailto:info@erhub.ee" className="text-blue-600 hover:underline">info@erhub.ee</a></p>
-						</div> */}
-					</div>
-				</div>
+				
 				<p className="text-[14px] md:text-[18px] mb-5 leading-tight py-4">
 					Do you have any questions or comments? Enter your details
 					and we'll be happy to get back to you.
@@ -90,6 +76,17 @@ const Contact = () => {
 					</button>
 				</div>
 				{/* </form> */}
+
+				{/* <div className="mb-8 p-6 border border-gray-200 rounded-md bg-gray-50">
+					<h2 className="text-[20px] font-semibold mb-4">Company Information</h2>
+					<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+						<div>
+							<h3 className="text-[16px] font-medium mb-2">WuKong OÜ</h3>
+							<p className="text-[14px] mb-1">Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 15551, Estonia</p>
+							<p className="text-[14px]">Email: <a href="mailto:support@wristo.io" className="text-blue-600 hover:underline">support@wristo.io</a></p>
+						</div>
+					</div>
+				</div> */}
 			</div>
 		</Wrapper>
 	);

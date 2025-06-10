@@ -29,15 +29,19 @@ const Footer = () => {
                     <div className="text-[15px] text-white/[0.9] hover:text-white cursor-pointer text-center md:text-left">
                         <div>© 2025 WuKong OÜ. All Rights Reserved</div>
                         <div className="mt-1">Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 15551, Estonia</div>
-                        <div className="mt-1">Email: wonder.gface@gmail.com</div>
+                        <div className="mt-1">Email: support@wristo.io</div>
                     </div>
                     {/* LEFT END */}
                 </Wrapper>
             </div>
 
             {/* Minimal footer - always visible */}
-            <div className="py-2 text-center text-sm text-white/80 hover:text-white/90 transition-colors">
-                © 2025 WuKong OÜ | <Link href="/contact" className="text-blue-300 hover:text-blue-200 underline transition-colors">Contact</Link> | <Link href="/faq" className="text-blue-300 hover:text-blue-200 underline transition-colors">FAQ</Link>
+            <div className="py-4 text-center text-sm text-white/80 hover:text-white/90 transition-colors">
+                © 2025 WuKong OÜ &nbsp;|&nbsp;
+                <Link href="/terms" className="text-blue-300 hover:text-blue-200 underline transition-colors">Terms of Use</Link> &nbsp;|&nbsp;
+                <Link href="/privacy" className="text-blue-300 hover:text-blue-200 underline transition-colors">Privacy Policy</Link> &nbsp;|&nbsp;   
+                <Link href="/contact" className="text-blue-300 hover:text-blue-200 underline transition-colors">Contact</Link> &nbsp;|&nbsp;
+                <Link href="/faq" className="text-blue-300 hover:text-blue-200 underline transition-colors">FAQ</Link>
             </div>
         </footer>
     );

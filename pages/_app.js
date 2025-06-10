@@ -60,7 +60,7 @@ export default function App({ Component, pageProps }) {
             </Head>
             <Provider store={store}>
                 <Header />
-                <div className="pb-[120px]"> {/* Added padding to prevent content from being hidden behind fixed footer */}
+                <div className="pb-[10px]"> {/* Added padding to prevent content from being hidden behind fixed footer */}
                     <Component {...pageProps} />
                 </div>
                 <Footer />

@@ -353,7 +353,7 @@ export async function getStaticProps() {
     ],
   };
   const populates = await fetchDataFromApi(
-    "/api/products/page?pageNum=1&pageSize=99&orderBy=download:desc"
+    "/api/products/page?pageNum=1&pageSize=33&orderBy=download:desc"
   );
   console.log("populates", populates);
   shuffleArray(populates.data.list);
