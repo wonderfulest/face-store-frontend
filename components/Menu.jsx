@@ -7,9 +7,8 @@ const data = [
 	{ id: 2, name: "New", url: "/new" },
 	{ id: 3, name: "Categories", subMenu: true },
 	{ id: 4, name: "FAQ", url: "/faq" },
-	{ id: 5, name: "Code", url: "https://pay.wristo.io/code" },
-	{ id: 6, name: "Studio", url: "https://studio.wristo.io" },
-	// { id: 4, name: "Plus", url: "/plus" },
+	// { id: 5, name: "Code", url: "https://pay.wristo.io/code" },
+	// { id: 6, name: "Studio", url: "https://studio.wristo.io" },
 	// { id: 4, name: "Contact", url: "/contact" },
 	// { id: 5, name: "About", url: "/about" },
 ];
