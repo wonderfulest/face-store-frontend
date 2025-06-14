@@ -91,7 +91,7 @@ const Header = () => {
                     {/* Icon end */}
 
                     {/* Shopping cart icon hidden as requested */}
-                    {/* <Link href="/cart">
+                    <Link href="/cart">
                         <div className="w-8 md:w-12 h-8 md:h-12 rounded-full flex justify-center items-center hover:bg-black/[0.05] cursor-pointer relative">
                             <BsCart className="text-[15px] md:text-[20px]" />
                             {cartItems.length > 0 && (
@@ -100,7 +100,7 @@ const Header = () => {
                                 </div>
                             )}
                         </div>
-                    </Link> */}
+                    </Link>
                     {/* Icon end */}
 
                     {/* Mobile icon start */}

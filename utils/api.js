@@ -13,7 +13,6 @@ export const fetchDataFromApi = async (endpoint) => {
 
     try {
         const res = await fetch(`${baseUrl}${endpoint}`, options);
-        console.log("333333 res", res);
         const data = await res.json();
         return data;
     } catch (error) {

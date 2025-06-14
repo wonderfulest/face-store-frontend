@@ -92,12 +92,19 @@ const ProductDetails = ({ product, products }) => {
 						</div>
 
 						{/* ADD TO CART BUTTON START */}
-						{/* <button
+						<button
 							className="w-full py-4 rounded-full border border-black text-lg font-medium transition-transform active:scale-95 mb-3 hover:opacity-75"
 							onClick={() => {
 								dispatch(
 									addToCart({
-										...product?.data?.[0],
+										id: p.appId || p.id,
+										attributes: {
+											...p,
+											price: p.price,
+											subtitle: p.description,
+											thumbnail: { data: { attributes: { url: p.heroFile?.url || "" } } },
+											size: { data: [] }, // 如有size数据可补充
+										},
 										selectedSize,
 										oneQuantityPrice: p.price,
 									})
@@ -106,7 +113,7 @@ const ProductDetails = ({ product, products }) => {
 							}}
 						>
 							Add to Cart
-						</button> */}
+						</button>
 						{/* ADD TO CART BUTTON END */}
 
 						{/* WHISHLIST BUTTON START */}
@@ -129,7 +136,7 @@ const ProductDetails = ({ product, products }) => {
 						{/* DOWNLOAD BUTTON END */}
 
 						{/* Input the Code START */}
-						<button
+						{/* <button
 							className="w-full py-4 rounded-full border-4 hover:bg-gray-200 text-lg font-medium transition-transform active:scale-95 flex items-center justify-center gap-2 hover:opacity-75 mb-10"
 							onClick={() => {
 								window.open("https://pay.wristo.io/code", "_blank");
@@ -137,7 +144,7 @@ const ProductDetails = ({ product, products }) => {
 						>
 							Unlock Trial
 							<IoIosUnlock size={20} />
-						</button>
+						</button> */}
 						{/* DOWNLOAD BUTTON END */}
 
 						<div>
